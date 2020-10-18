@@ -1,0 +1,1 @@
+create TABLE nombretabla (id int, nombre varchar(20), fecha TIMESTAMP) 
