@@ -36,62 +36,58 @@
               Check In
             </label>
           </p>
-          <input class="w3-input w3-border" name="CheckIn" placeholder="DD MM YYYY" required="" type="text">
-            <p>
-              <label>
-                <i class="fa fa-calendar-o">
-                </i>
-                Check Out
-              </label>
-            </p>
-            <input class="w3-input w3-border" name="CheckOut" placeholder="DD MM YYYY" required="" type="text">
-              <p>
-                <label>
-                  <i class="fa fa-male">
-                  </i>
-                  Adults
-                </label>
-              </p>
-              <input class="w3-input w3-border" max="6" min="1" name="Adults" type="number" value="1">
-                <p>
-                  <label>
-                    <i class="fa fa-child">
-                    </i>
-                    Kids
-                  </label>
-                </p>
-                <input class="w3-input w3-border" max="6" min="0" name="Kids" type="number" value="0">
-                  <p>
-                    <button class="w3-button w3-block w3-green w3-left-align" type="submit">
-                      <i class="fa fa-search w3-margin-right">
-                      </i>
-                      Search availability
-                    </button>
-                  </p>
-                </input>
-              </input>
-            </input>
-          </input>
+          <input class="w3-input w3-border" name="CheckIn" placeholder="DD MM YYYY" required="" type="text"/>
+          <p>
+            <label>
+              <i class="fa fa-calendar-o">
+              </i>
+              Check Out
+            </label>
+          </p>
+          <input class="w3-input w3-border" name="CheckOut" placeholder="DD MM YYYY" required="" type="text"/>
+          <p>
+            <label>
+              <i class="fa fa-male">
+              </i>
+              Adults
+            </label>
+          </p>
+          <input class="w3-input w3-border" max="6" min="1" name="Adults" type="number" value="1"/>
+          <p>
+            <label>
+              <i class="fa fa-child">
+              </i>
+              Kids
+            </label>
+          </p>
+          <input class="w3-input w3-border" max="6" min="0" name="Kids" type="number" value="0"/>
+          <p>
+            <button class="w3-button w3-block w3-green w3-left-align" type="submit">
+              <i class="fa fa-search w3-margin-right">
+              </i>
+              Search availability
+            </button>
+          </p>
         </form>
       </div>
-      <div class="w3-bar-block">
-        <a class="w3-bar-item w3-button w3-padding-16" href="#apartment">
-          <i class="fa fa-building">
-          </i>
-          Apartment
-        </a>
-        <a class="w3-bar-item w3-button w3-padding-16" href="javascript:void(0)" onclick="document.getElementById('subscribe').style.display='block'">
-          <i class="fa fa-rss">
-          </i>
-          Subscribe
-        </a>
-        <a class="w3-bar-item w3-button w3-padding-16" href="#contact">
-          <i class="fa fa-envelope">
-          </i>
-          Contact
-        </a>
-      </div>
     </nav>
+    <div class="w3-bar-block">
+      <a class="w3-bar-item w3-button w3-padding-16" href="#apartment">
+        <i class="fa fa-building">
+        </i>
+        Apartment
+      </a>
+      <a class="w3-bar-item w3-button w3-padding-16" href="javascript:void(0)" onclick="document.getElementById('subscribe').style.display='block'">
+        <i class="fa fa-rss">
+        </i>
+        Subscribe
+      </a>
+      <a class="w3-bar-item w3-button w3-padding-16" href="#contact">
+        <i class="fa fa-envelope">
+        </i>
+        Contact
+      </a>
+    </div>
     <!-- Top menu on small screens -->
     <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
       <span class="w3-bar-item">
@@ -113,7 +109,7 @@
       <!-- Slideshow Header -->
       <div class="w3-container" id="apartment">
         <h2 class="w3-text-green">
-          The Apartment
+          Disney World Packages
         </h2>
         <div class="w3-display-container mySlides">
           <img src="/w3images/livingroom.jpg" style="width:100%;margin-bottom:-6px"/>
