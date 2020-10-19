@@ -157,6 +157,18 @@
         <div class="w3-col s3">
           <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(4)" src="/w3images/livingroom2.jpg" style="width:100%;cursor:pointer" title="Second Living Room"/>
         </div>
+        <div class="w3-col s3">
+          <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(1)" src="/w3images/livingroom.jpg" style="width:100%;cursor:pointer" title="Living room"/>
+        </div>
+        <div class="w3-col s3">
+          <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(2)" src="/w3images/diningroom.jpg" style="width:100%;cursor:pointer" title="Dining room"/>
+        </div>
+        <div class="w3-col s3">
+          <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(3)" src="/w3images/bedroom.jpg" style="width:100%;cursor:pointer" title="Bedroom"/>
+        </div>
+        <div class="w3-col s3">
+          <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(4)" src="/w3images/livingroom2.jpg" style="width:100%;cursor:pointer" title="Second Living Room"/>
+        </div>
       </div>
       <div class="w3-container">
         <h4>
@@ -348,7 +360,7 @@ function w3_open() {
   document.getElementById("mySidebar").style.display = "block";
   document.getElementById("myOverlay").style.display = "block";
 }
- 
+
 function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
   document.getElementById("myOverlay").style.display = "none";
@@ -382,7 +394,15 @@ function showDivs(n) {
   dots[slideIndex-1].className += " w3-opacity-off";
 }
     </script>
+    <script src="js/jquery.min.js" type="text/javascript">
+    </script>
     <script src="js/js.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+index();
+
+});
     </script>
   </body>
 </html>
