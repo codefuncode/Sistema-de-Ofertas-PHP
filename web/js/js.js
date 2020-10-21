@@ -11,23 +11,40 @@ function panelofertas(argument) {
 
     var btn = document.getElementById('enviar');
     btn.onclick = function(event) {
-        console.log(event);
+        // console.log(event);
 
         event.stopPropagation();
 
         var datosretorno = capturavalores();
 
-        console.log(datosretorno);
+        // console.log(datosretorno);
 
-        // $.post("demo_test_post.asp", {
-        //         name: "Donald Duck",
-        //         city: "Duckburg"
+        // $.post("../php/insert.php", {
+        //         datosretorno
         //     },
         //     function(data, status) {
-        //         alert("Data: " + data + "\nStatus: " + status);
+        //         console.log(("Data: " + data + "\nStatus: " + status));
         //     });
+
+        //  Problemas con envio de datos al resivirse en el servidos 
+        var url = "../php/insert.php";
+        var data = capturavalores();
+        var dataType = "json";
+        $.ajax({
+            type: "post",
+            url: url,
+            data: data,
+            success: function(argument) {
+                console.log(argument);
+
+                // console.log(JSON.stringify(argument));
+            },
+            dataType: dataType
+        });
+
         function capturavalores(argument) {
-            let nombreOferta =
+
+            var nombreOferta =
                 document.getElementById('nombreOferta'),
                 descripcionOferta =
                 document.getElementById('descripcionOferta'),
@@ -40,23 +57,25 @@ function panelofertas(argument) {
                 imagen =
                 document.getElementById('imagen');
 
-            var data = {
+            let data = {
                 "nombreOferta": nombreOferta.value,
                 "descripcionOferta": descripcionOferta.value,
                 "precio": precio.value,
                 "fechavigencia": fechavigencia.value
             }
-            nombreOferta.value = "";
+            // console.log(fechavigencia.value);
+            // nombreOferta.value = "";
 
-            descripcionOferta.value = "";
+            // descripcionOferta.value = "";
 
-            precio.value = 0;
+            // precio.value = 0;
 
-            fechavigencia.value = "";
+            // fechavigencia.value = "";
 
             return data;
 
         }
+
     };
 
 }

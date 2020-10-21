@@ -11,12 +11,11 @@ create database Disney
 		-- Precio de la oferta 
 		precio decimal(15,2),
 		-- Fecha de vigencia del oferta 
-		fechavigencia DATETIME, 
-		-- 
+		fechavigencia DATE, 
+		-- Enlaces de las rutas a los ficheros multimedia 
 		video  varchar(100),
-		-- 
 		imagen  varchar(100),  
-		--  solo determina que la palabra id oferta sera en campo de llave primaria 
+		-- Solo determina que la palabra id oferta sera en campo de llave primaria 
 		PRIMARY KEY (idoferta)
 
 ); 

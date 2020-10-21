@@ -82,55 +82,60 @@
       <div class="w3-row w3-padding-64">
         <div class="w3-twothird w3-container">
           <div class="w3-container ">
+            <form>
             <h2>
-              Bordered Input
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quam rem eligendi illo?
             </h2>
             <p>
-              Add the w3-border class to create bordered inputs.
+              Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Ea quas aliquid ipsum commodi fugit beatae, eveniet consectetur aliquam fuga eos, atque labore, non quaerat nisi quasi in hic magnam praesentium?
             </p>
             <p>
               <label>
-                nombreOferta
+                Nombre de la Oferta
               </label>
-              <input class="w3-input w3-border" id="nombreOferta" name="first" type="text"/>
+              <input class="w3-input w3-border" id="nombreOferta" name="nombreOferta" type="text"/>
             </p>
             <p>
               <label>
-                descripcionOferta
+                Descripción  de la Oferta
               </label>
               <br/>
-              <textarea cols="75" id="descripcionOferta" name="w3review" rows="4" style="width: 100%; height: 200px; resize: none;">
+              <textarea cols="75" id="descripcionOferta" name="descripcionOferta" rows="4" style="width: 100%; height: 200px; resize: none;">
               </textarea>
             </p>
             <p>
               <label>
-                precio
+                Precio
               </label>
-              <input class="w3-input w3-border" id="precio" name="first" type="number"/>
+              <input class="w3-input w3-border" id="precio" name="precio" type="number"/>
             </p>
             <p>
               <label>
-                fechavigencia
+                Fecha Vigencia
               </label>
-              <input class="w3-input w3-border" id="fechavigencia" name="last" type="date"/>
+              <input class="w3-input w3-border" id="fechavigencia" name="fechavigencia" type="date"/>
             </p>
+            <!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+            <!--  Input de tipo file para subir ficheros  -->
             <p>
               <label>
                 video
               </label>
-              <input class="w3-input w3-border" id="video" name="first" type="text"/>
+              <input class="" id="video" name="video" type="file"/>
             </p>
             <p>
               <label>
                 imagen
               </label>
-              <input class="w3-input w3-border" id="imagen" name="last" type="text"/>
+              <input class="" id="imagen" name="imagen" type="file"/>
             </p>
             <p>
+              <!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
               <button class="w3-button w3-green w3-block" id="enviar">
                 Enviar
               </button>
             </p>
+          </form>
           </div>
         </div>
         <div class="w3-third w3-container">
