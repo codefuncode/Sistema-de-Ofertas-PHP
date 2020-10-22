@@ -1,40 +1,52 @@
  <?php
 include_once "connect.php";
 //  Las variables resividas llegan en  balco  revisar primero
+// =================================
+$json = json_decode($_POST['json']);
 
-$nombreOferta      = $_POST['nombreOferta'];
-$descripcionOferta = $_POST['descripcionOferta'];
-$precio            = $_POST['precio'];
-$fechavigencia     = $_POST['fechavigencia'];
+// echo json_encode($json);
+// =================================
 
-$age = array(
-    "nombreOferta"      => $nombreOferta,
-    "descripcionOferta" => $descripcionOferta,
-    "precio"            => $precio,
-    "fechavigencia"     => $fechavigencia);
+// $json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
 
-echo json_encode($age);
+// $json = json_decode($json);
+$datos = array();
 
-// $conn = new mysqli($servername, $username, $password, $dbname);
-// // Check connection
-// if ($conn->connect_error) {
-//     die("Connection failed: " . $conn->connect_error);
-// }
+foreach ($json as $value) {
+    array_push($datos, $value);
 
-// $sql = "INSERT INTO ofertas (nombreOferta, descripcionOferta, precio,fechavigencia)
+}
 
-// VALUES ('$nombreOferta', '$descripcionOferta','$precio' ,'$fechavigencia')";
+// $nombreOferta      = $json['nombreOferta'];
+// $descripcionOferta = $json['descripcionOferta'];
+// $precio            = $json['precio'];
+// $fechavigencia     = $json['fechavigencia'];
 
-// if ($conn->query($sql) === true) {
+$nombreOferta      = $datos[0];
+$descripcionOferta = $datos[1];
+$precio            = $datos[2];
+$fechavigencia     = $datos[3];
 
-//     echo "New record created successfully";
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-// } else {
+$sql = "INSERT INTO ofertas (nombreOferta, descripcionOferta, precio,fechavigencia)
 
-//     echo "Error: " . $sql . "<br>" . $conn->error;
-// }
+VALUES ('$nombreOferta', '$descripcionOferta','$precio' ,'$fechavigencia')";
 
-// $conn->close();
+if ($conn->query($sql) === true) {
+
+// echo json_encode($json);
+
+} else {
+
+    // echo json_encode($json);
+}
+
+$conn->close();
 
 // try {
 
@@ -63,7 +75,7 @@ echo json_encode($age);
 //     // $stmt->bindParam(':imagen', $imagen);
 
 //     // insert a row
-//
+
 //     $stmt->execute();
 
 //     echo "New records created successfully";
@@ -71,5 +83,5 @@ echo json_encode($age);
 //     echo "Error: " . $e->getMessage();
 // }
 // $conn = null;
-?>
+// ?>
 

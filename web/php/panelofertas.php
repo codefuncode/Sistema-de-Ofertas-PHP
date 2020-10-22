@@ -82,7 +82,6 @@
       <div class="w3-row w3-padding-64">
         <div class="w3-twothird w3-container">
           <div class="w3-container ">
-            <form>
             <h2>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quam rem eligendi illo?
             </h2>
@@ -135,7 +134,6 @@
                 Enviar
               </button>
             </p>
-          </form>
           </div>
         </div>
         <div class="w3-third w3-container">

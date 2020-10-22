@@ -399,7 +399,7 @@ function showDivs(n) {
     <script src="js/js.js" type="text/javascript">
     </script>
     <script type="text/javascript">
-    $(document).ready(function() {
+      $(document).ready(function() {
 index();
 
 });

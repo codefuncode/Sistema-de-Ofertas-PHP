@@ -10,72 +10,72 @@ function index(argument) {
 function panelofertas(argument) {
 
     var btn = document.getElementById('enviar');
-    btn.onclick = function(event) {
-        // console.log(event);
 
-        event.stopPropagation();
+    btn.onclick =
+        function(event) {
+            event.stopPropagation();
 
-        var datosretorno = capturavalores();
+            // =================================================
+            $.ajax({
+                    method: 'POST',
+                    url: '../php/insert.php',
+                    data: {
+                        json: JSON.stringify(capturavalores())
+                    },
+                    dataType: 'json'
+                })
+                .done(function(data) {
 
-        // console.log(datosretorno);
+                    console.log('done');
+                    console.log('==================');
+                    // console.log(data.nombreOferta);
+                    // console.log(data.descripcionOferta);
+                    // console.log(data.precio);
+                    // console.log(data.fechavigencia);
+                    console.log(data);
+                    console.log('==================');
 
-        // $.post("../php/insert.php", {
-        //         datosretorno
-        //     },
-        //     function(data, status) {
-        //         console.log(("Data: " + data + "\nStatus: " + status));
-        //     });
+                })
+                .fail(function(data) {
+                    console.log('fail');
+                    console.log(data);
+                });
+            // =================================================
 
-        //  Problemas con envio de datos al resivirse en el servidos 
-        var url = "../php/insert.php";
-        var data = capturavalores();
-        var dataType = "json";
-        $.ajax({
-            type: "post",
-            url: url,
-            data: data,
-            success: function(argument) {
-                console.log(argument);
+            function capturavalores(argument) {
 
-                // console.log(JSON.stringify(argument));
-            },
-            dataType: dataType
-        });
+                var nombreOferta =
+                    document.getElementById('nombreOferta'),
+                    descripcionOferta =
+                    document.getElementById('descripcionOferta'),
+                    precio =
+                    document.getElementById('precio'),
+                    fechavigencia =
+                    document.getElementById('fechavigencia'),
+                    video =
+                    document.getElementById('video'),
+                    imagen =
+                    document.getElementById('imagen');
 
-        function capturavalores(argument) {
+                let datadevuelta = {
+                    "nombreOferta": nombreOferta.value,
+                    "descripcionOferta": descripcionOferta.value,
+                    "precio": precio.value,
+                    "fechavigencia": fechavigencia.value
+                }
+                // console.log(fechavigencia.value);
+                nombreOferta.value = "";
 
-            var nombreOferta =
-                document.getElementById('nombreOferta'),
-                descripcionOferta =
-                document.getElementById('descripcionOferta'),
-                precio =
-                document.getElementById('precio'),
-                fechavigencia =
-                document.getElementById('fechavigencia'),
-                video =
-                document.getElementById('video'),
-                imagen =
-                document.getElementById('imagen');
+                descripcionOferta.value = "";
 
-            let data = {
-                "nombreOferta": nombreOferta.value,
-                "descripcionOferta": descripcionOferta.value,
-                "precio": precio.value,
-                "fechavigencia": fechavigencia.value
+                precio.value = 0;
+
+                fechavigencia.value = "";
+                console.log(JSON.stringify(datadevuelta));
+                return datadevuelta;
+
             }
-            // console.log(fechavigencia.value);
-            // nombreOferta.value = "";
 
-            // descripcionOferta.value = "";
-
-            // precio.value = 0;
-
-            // fechavigencia.value = "";
-
-            return data;
-
-        }
-
-    };
+        };
 
 }
