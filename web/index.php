@@ -43,6 +43,7 @@
               </i>
               Check Out
             </label>
+
           </p>
           <input class="w3-input w3-border" name="CheckOut" placeholder="DD MM YYYY" required="" type="text"/>
           <p>
@@ -175,6 +176,7 @@
           <strong>
             The space
           </strong>
+          <input type="button" name="btn" id="selecciona" value="Test" />
         </h4>
         <div class="w3-row w3-large">
           <div class="w3-col s6">
@@ -398,9 +400,11 @@ function showDivs(n) {
     </script>
     <script src="js/js.js" type="text/javascript">
     </script>
+    <script type="text/javascript" src="js/selectofertas.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
-index();
+// index();
+// pruebaseleccion();
 
 });
     </script>

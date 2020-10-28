@@ -26,14 +26,25 @@ function panelofertas(argument) {
                 })
                 .done(function(data) {
 
-                    console.log('done');
-                    console.log('==================');
-                    // console.log(data.nombreOferta);
-                    // console.log(data.descripcionOferta);
-                    // console.log(data.precio);
-                    // console.log(data.fechavigencia);
                     console.log(data);
-                    console.log('==================');
+
+                    if (data) {
+                        // ---------------------------
+                        //  esto es de la libertaria swetalert
+                        swal({
+                            title: "Perfecto!!",
+                            text: "Registro Insertado",
+                            icon: "success",
+                        });
+                        // ---------------------------
+                    } else {
+
+                        swal({
+                            title: "Error",
+                            text: "Verifique si ingreso los datos correctamente ",
+                            icon: "error",
+                        });
+                    }
 
                 })
                 .fail(function(data) {
@@ -44,7 +55,7 @@ function panelofertas(argument) {
 
             function capturavalores(argument) {
 
-                var nombreOferta =
+                let nombreOferta =
                     document.getElementById('nombreOferta'),
                     descripcionOferta =
                     document.getElementById('descripcionOferta'),
@@ -71,7 +82,7 @@ function panelofertas(argument) {
                 precio.value = 0;
 
                 fechavigencia.value = "";
-                console.log(JSON.stringify(datadevuelta));
+                // console.log(JSON.stringify(datadevuelta));
                 return datadevuelta;
 
             }

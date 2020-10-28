@@ -1,87 +1,64 @@
  <?php
 include_once "connect.php";
-//  Las variables resividas llegan en  balco  revisar primero
+//
 // =================================
+//  En la variable nombrada $json se recibirá el dato que nos envía JavaScript
 $json = json_decode($_POST['json']);
 
-// echo json_encode($json);
-// =================================
+// ==========================================
+// Solo para hacer pruebas de aplicación
+// ==========================================
 
-// $json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
+// $json = json_decode(
+//     '{"nombreOferta":"test",
+// "descripcionOferta":"descripcion de la oferta",
+// "precio":"4",
+// "fechavigencia":"2020-10-21"}');
 
-// $json = json_decode($json);
-$datos = array();
+// $nombreOferta      = $json->nombreOferta;
+// $descripcionOferta = $json->descripcionOferta;
+// $precio            = $json->precio;
+// $fechavigencia     = $json->fechavigencia;
 
-foreach ($json as $value) {
-    array_push($datos, $value);
+// echo $nombreOferta;
+// echo '<br>';
+// echo $descripcionOferta;
+// echo '<br>';
+// echo $precio;
+// echo '<br>';
+// echo $fechavigencia;
+// echo '<br>';
+// ========================================================
 
-}
-
-// $nombreOferta      = $json['nombreOferta'];
-// $descripcionOferta = $json['descripcionOferta'];
-// $precio            = $json['precio'];
-// $fechavigencia     = $json['fechavigencia'];
-
-$nombreOferta      = $datos[0];
-$descripcionOferta = $datos[1];
-$precio            = $datos[2];
-$fechavigencia     = $datos[3];
-
+// ===========================================================
+//  Esta linea abre una conexión con la base de datos
 $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
+
+//  ---------------------------------------------------
+//  Con este condicional verificamos la conexión
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+//  ---------------------------------------------------
 
+// -----------------------------------------------------------------------------------
+//  Guardamos en una variable la consulta con los valores que trae el dato enviado por javascriprt en la matriz llamada $json
 $sql = "INSERT INTO ofertas (nombreOferta, descripcionOferta, precio,fechavigencia)
 
-VALUES ('$nombreOferta', '$descripcionOferta','$precio' ,'$fechavigencia')";
+VALUES ('$json->nombreOferta', '$json->descripcionOferta',' $json->precio' ,'$json->fechavigencia')";
+// -----------------------------------------------------------------------------------
 
+// ---------------------------------
+//  Ejecutamos la consulta y si el resultado devuelve true entonces nos envia
 if ($conn->query($sql) === true) {
 
-// echo json_encode($json);
+    echo "true";
 
 } else {
 
-    // echo json_encode($json);
+    echo "false";
 }
+// ---------------------------------
 
 $conn->close();
-
-// try {
-
-//     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-//     // set the PDO error mode to exception
-//     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-//     // prepare sql and bind parameters
-//     $stmt = $conn->prepare(
-//         "INSERT INTO ofertas
-//         (nombreOferta,
-//         descripcionOferta,
-//         precio,
-//         fechavigencia)
-//         VALUES (
-//         :nombreOferta,
-//         :descripcionOferta,
-//         :precio,
-//         :fechavigencia");
-
-//     $stmt->bindParam(':nombreOferta', $nombreOferta);
-//     $stmt->bindParam(':descripcionOferta', $descripcionOferta);
-//     $stmt->bindParam(':precio', $precio);
-//     $stmt->bindParam(':fechavigencia', $fechavigencia);
-//     // $stmt->bindParam(':video', $video);
-//     // $stmt->bindParam(':imagen', $imagen);
-
-//     // insert a row
-
-//     $stmt->execute();
-
-//     echo "New records created successfully";
-// } catch (PDOException $e) {
-//     echo "Error: " . $e->getMessage();
-// }
-// $conn = null;
-// ?>
-
+// ===========================================================
