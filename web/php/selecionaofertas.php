@@ -29,3 +29,5 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 $conn->close();
+// $json = json_decode($_POST['json']);
+// echo json_encode($json);

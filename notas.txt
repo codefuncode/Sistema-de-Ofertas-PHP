@@ -45,3 +45,64 @@ echo "Hello $data->name, your email is $data->email";
 ?> 
 
 https://exceptionshub.com/send-json-data-from-javascript-to-php.html
+
+
+A File Icon
+
+All Autocomplete
+
+AutoFileName
+
+ayu
+
+Babel
+
+CodeFormater
+
+Color Helper
+
+ColorPick
+
+CSS Colors
+
+CSS Snippets
+
+Emmet
+
+
+JavaScript Comploetions
+
+JQuery
+
+JQueryDocs
+
+Lenmguaje - Spanish 
+
+LinkOpener
+
+MarkdownPreview
+
+Open in Browser
+
+Open URL
+
+OpeninBrowser
+
+Pakage Control
+
+PhpDoc
+
+PHPSnippets
+
+PyV8
+
+Seti_UI
+
+SublimeCodeIntel
+
+Theme - Bambu
+
+View in Browser
+
+zzz A File Icon zzz
+

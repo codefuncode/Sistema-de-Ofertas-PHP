@@ -403,8 +403,8 @@ function showDivs(n) {
     <script type="text/javascript" src="js/selectofertas.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
-// index();
-// pruebaseleccion();
+index();
+pruebaseleccion();
 
 });
     </script>

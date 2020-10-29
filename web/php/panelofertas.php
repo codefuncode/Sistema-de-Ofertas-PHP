@@ -32,6 +32,7 @@
           <i class="fa fa-bars">
           </i>
         </a>
+
         <a class="w3-bar-item w3-button w3-theme-l1" href="#">
           Logo
         </a>
