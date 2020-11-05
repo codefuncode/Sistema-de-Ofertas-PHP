@@ -89,11 +89,11 @@
         <div class="w3-twothird w3-container">
           <div class="w3-container ">
             <h2>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quam rem eligendi illo?
+              Panel administrativo
             </h2>
-            <p>
+         <!--    <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Ea quas aliquid ipsum commodi fugit beatae, eveniet consectetur aliquam fuga eos, atque labore, non quaerat nisi quasi in hic magnam praesentium?
-            </p>
+            </p> -->
             <p>
               <label>
                 Nombre de la Oferta

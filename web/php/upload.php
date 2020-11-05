@@ -1,37 +1,47 @@
 <?php
+// Include the database configuration file
+// include 'connect.php';
+// $statusMsg = '';
 
-if (isset($_POST['but_upload'])) {
-    $maxsize = 5242880; // 5MB
+// // File upload path
+// $targetDir      = "../img/";
+// $fileName       = basename($_FILES["file"]["name"]);
+// $targetFilePath = $targetDir . $fileName;
+// $fileType       = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
-    $name        = $_FILES['file']['name'];
-    $target_dir  = "videos/";
-    $target_file = $target_dir . $_FILES["file"]["name"];
+// if (!empty($_FILES["file"]["name"])) {
 
-    // Select file type
-    $videoFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+//     // Allow certain file formats
+//     $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
 
-    // Valid file extensions
-    $extensions_arr = array("mp4", "avi", "3gp", "mov", "mpeg");
+//     if (in_array($fileType, $allowTypes)) {
 
-    // Check extension
-    if (in_array($videoFileType, $extensions_arr)) {
+//         // Upload file to server
+//         if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
 
-        // Check file size
-        if (($_FILES['file']['size'] >= $maxsize) || ($_FILES["file"]["size"] == 0)) {
-            echo "File too large. File must be less than 5MB.";
-        } else {
-            // Upload
-            if (move_uploaded_file($_FILES['file']['tmp_name'], $target_file)) {
-                // Insert record
-                $query = "INSERT INTO videos(name,location) VALUES('" . $name . "','" . $target_file . "')";
+//             // Insert image file name into database
+//             $insert = $db->query("INSERT into images (file_name, uploaded_on) VALUES ('" . $fileName . "', NOW())");
 
-                mysqli_query($con, $query);
-                echo "Upload successfully.";
-            }
-        }
+//             if ($insert) {
 
-    } else {
-        echo "Invalid file extension.";
-    }
+//                 $statusMsg = "The file " . $fileName . " has been uploaded successfully.";
 
-}
+//             } else {
+//                 $statusMsg = "File upload failed, please try again.";
+//             }
+
+//         } else {
+//             $statusMsg = "Sorry, there was an error uploading your file.";
+//         }
+
+//     } else {
+//         $statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
+//     }
+
+// } else {
+
+//     $statusMsg = 'Please select a file to upload.';
+// }
+
+// // Display status message
+// echo $statusMsg;
