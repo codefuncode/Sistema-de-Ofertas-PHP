@@ -17,14 +17,17 @@ function panelofertas(argument) {
 
             // =================================================
             $.ajax({
-                    method: 'POST',
-                    url: '../php/insert.php',
-                    data: {
-                        json: JSON.stringify(capturavalores())
-                    },
-                    dataType: 'json'
-                })
-                .done(function(data) {
+                    url: "insert.php",
+                    type: "POST",
+                    data: capturavalores(),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+
+                        // console.log(data);
+                    }
+                }).done(function(data) {
 
                     console.log(data);
 
@@ -68,13 +71,22 @@ function panelofertas(argument) {
                     imagen =
                     document.getElementById('imagen');
 
-                let datadevuelta = {
-                    "nombreOferta": nombreOferta.value,
-                    "descripcionOferta": descripcionOferta.value,
-                    "precio": precio.value,
-                    "fechavigencia": fechavigencia.value
-                }
-                // console.log(fechavigencia.value);
+                // =============================================================
+                // let formData = new FormData();
+                // formData.append('imagen', imagen.files[0]);
+                // =============================================================
+
+                //  falta colocar comentarios sobre laimplementacion de  el uso de formdata para enviar datos al servidor 
+                let formData = new FormData();
+                formData.append('nombreOferta', nombreOferta.value);
+                formData.append('descripcionOferta', descripcionOferta.value);
+                formData.append('precio', precio.value);
+                formData.append('fechavigencia', fechavigencia.value);
+                formData.append('video', video.files[0]);
+                formData.append('imagen', imagen.files[0]);
+
+                let datadevuelta = formData;
+
                 nombreOferta.value = "";
 
                 descripcionOferta.value = "";
