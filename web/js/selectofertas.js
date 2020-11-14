@@ -29,7 +29,13 @@ function pruebaseleccion(argument) {
                 // }
                 // --- 5 de noviembre se cambio esta linea para delegar los datos en la pagina 
                 var nombreOfertaDisplay = document.getElementById('nombreOfertaDisplay');
+
+                var imagenserver = document.getElementById('imagenserver');
+
                 nombreOfertaDisplay.innerHTML = data[data.length - 1]['nombreOferta'];
+
+                // console.log(data[0]['imagen']);
+                imagenserver.src = "php/" + data[data.length - 1]['imagen'];
 
             })
             .fail(function(data) {

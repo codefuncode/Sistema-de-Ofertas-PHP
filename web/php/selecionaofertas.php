@@ -7,7 +7,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT nombreOferta, descripcionOferta, precio,fechavigencia FROM ofertas";
+$sql = "SELECT nombreOferta, descripcionOferta, precio,fechavigencia,imagen FROM ofertas";
 
 $result = $conn->query($sql);
 
@@ -15,11 +15,15 @@ if ($result->num_rows > 0) {
     $data = [];
     while ($row = $result->fetch_assoc()) {
 
-        array_push($data, array(
-            'nombreOferta'      => $row['nombreOferta'],
-            'descripcionOferta' => $row['descripcionOferta'],
-            'precio'            => $row['precio'],
-            'fechavigencia'     => $row['fechavigencia']));
+        array_push($data,
+            array(
+                'nombreOferta'      => $row['nombreOferta'],
+                'descripcionOferta' => $row['descripcionOferta'],
+                'precio'            => $row['precio'],
+                'fechavigencia'     => $row['fechavigencia'],
+                'imagen'            => $row['imagen'],
+            )
+        );
 
     }
 
