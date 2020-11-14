@@ -31,11 +31,16 @@ function pruebaseleccion(argument) {
                 var nombreOfertaDisplay = document.getElementById('nombreOfertaDisplay');
 
                 var imagenserver = document.getElementById('imagenserver');
+                var videoserver = document.getElementById('videoserver');
+
+                // video.style.display = "none";
 
                 nombreOfertaDisplay.innerHTML = data[data.length - 1]['nombreOferta'];
-
-                // console.log(data[0]['imagen']);
                 imagenserver.src = "php/" + data[data.length - 1]['imagen'];
+                console.log(data[data.length - 1]['video']);
+
+                var srt = data[data.length - 1]['video'];
+                videoserver.src = srt.slice(3, 13);
 
             })
             .fail(function(data) {

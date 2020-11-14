@@ -37,7 +37,8 @@ if ($_POST['nombreOferta'] &&
     $_POST['descripcionOferta'] &&
     $_POST['precio'] &&
     $_POST['fechavigencia'] &&
-    ($_FILES['imagen']['name'] != "")
+    ($_FILES['imagen']['name'] != "") &&
+    ($_FILES['video']['name'] != "")
 ) {
 
     //  Aquí se realizan los protomedicatos
@@ -56,6 +57,14 @@ if ($_POST['nombreOferta'] &&
     $temp_name         = $_FILES['imagen']['tmp_name']; // Nombre temporal del fichero
     $path_filename_ext = $target_dir . $filename . "." . $ext; // Ruta completa del fichero
 
+    $target_dir_video        = "../"; // variable con el nombre del directorio para guardar imagen
+    $file_video              = $_FILES['video']['name']; // Nombre de la imagen
+    $path_video              = pathinfo($file_video); // Extrae la ruta completa del fichero revivido
+    $filename_video          = $path_video['filename']; // Extraemos solo en nombre de fichero
+    $ext_video               = $path_video['extension']; // Extraemos solo la extensión del fichero
+    $temp_name_video         = $_FILES['video']['tmp_name']; // Nombre temporal del fichero
+    $path_filename_ext_video = $target_dir_video . $filename_video . "." . $ext_video; // Ruta completa del fichero
+
     //  Esta linea abre una conexión con la base de datos
     $conn = new mysqli($servername, $username, $password, $dbname);
     // ==========================================================
@@ -71,15 +80,24 @@ if ($_POST['nombreOferta'] &&
 
 // -----------------------------------------------------------------------------------
     //  Guardamos en una variable la consulta con los valores que trae el dato enviado por javascriprt en la matriz llamada $json
-    $sql = "INSERT INTO ofertas (nombreOferta, descripcionOferta, precio,fechavigencia,imagen)
+    $sql = "INSERT INTO ofertas (nombreOferta, descripcionOferta, precio,fechavigencia,imagen,video)
 
-VALUES ('$nombreOferta ', '$descripcionOferta ','$precio' ,'$fechavigencia','$path_filename_ext')";
+VALUES ('$nombreOferta ', '$descripcionOferta ','$precio' ,'$fechavigencia','$path_filename_ext','$path_filename_ext_video')";
 // -----------------------------------------------------------------------------------
 
 // ---------------------------------
     //  Ejecutamos la consulta y si el resultado devuelve true entonces nos envía
-    if (($conn->query($sql) === true) && (file_exists($path_filename_ext) === false)) {
-        move_uploaded_file($temp_name, $path_filename_ext);
+    if (($conn->query($sql) === true) &&
+        (file_exists($path_filename_ext) === false) &&
+        (file_exists($path_filename_ext_video) === false)) {
+
+        move_uploaded_file(
+            $temp_name,
+            $path_filename_ext);
+
+        move_uploaded_file(
+            $temp_name_video,
+            $path_filename_ext_video);
 
         echo "true";
 
