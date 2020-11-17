@@ -110,3 +110,7 @@ View in Browser
 
 zzz A File Icon zzz
 
+
+
+En el fichero selecionaofertas  de js  esta la aplicacion de las fotos y contenido que seleccione el usuiariuo  y se mostraran los datos de la oferta que el usuario seleccione 
+

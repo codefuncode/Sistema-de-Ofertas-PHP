@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <title>
-    W3.CSS Template
+    Disney World Packages
   </title>
   <meta charset="utf-8"/>
   <script src="js/test.js" type="text/javascript">
@@ -10,147 +10,135 @@
   <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-  <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+  </script>
+  <link href="css/css.css" rel="stylesheet" type="text/css"/>
+</html>
+<style>
+  body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 .mySlides {display: none}
-  </style>
-  <body class="w3-content w3-border-left w3-border-right">
-    <!-- Sidebar/menu -->
-    <nav class="w3-sidebar w3-light-grey w3-collapse w3-top" id="mySidebar" style="z-index:3;width:260px">
-      <div class="w3-container w3-display-container w3-padding-16">
-        <i class="fa fa-remove w3-hide-large w3-button w3-transparent w3-display-topright" onclick="w3_close()">
-        </i>
-        <h3>
-        </h3>
-        <h3>
-        </h3>
-        <h6>
-        </h6>
-        <hr/>
-        <form action="/action_page.php" target="_blank">
-          <button class="w3-button w3-block w3-green w3-margin-bottom">
-            Button
-          </button>
-          <button class="w3-button w3-block w3-green w3-margin-bottom">
-            Button
-          </button>
-          <button class="w3-button w3-block w3-green w3-margin-bottom">
-            Button
-          </button>
-          <button class="w3-button w3-block w3-green w3-margin-bottom">
-            Button
-          </button>
-          <button class="w3-button w3-block w3-green w3-margin-bottom">
-            Button
-          </button>
-          <button class="w3-button w3-block w3-blue w3-margin-bottom">
-            <a href="php/panelofertas.php" target="_blank">
-              Administrador
-            </a>
-          </button>
-          <!--    <p>
-            <label>
-              <i class="fa fa-calendar-check-o">
-              </i>
-            </label>
-          </p> -->
-          <!--  <input class="w3-input w3-border" name="CheckIn" placeholder="DD MM YYYY" required="" type="text"/> -->
-          <!--    <p>
-            <label>
-              <i class="fa fa-calendar-o">
-              </i>
-            </label>
-          </p> -->
-          <!--     <input class="w3-input w3-border" name="CheckOut" placeholder="DD MM YYYY" required="" type="text"/>
-          <p>
-            <label>
-              <i class="fa fa-male">
-              </i>
-              Adults
-            </label>
-          </p>
-          <input class="w3-input w3-border" max="6" min="1" name="Adults" type="number" value="1"/>
-          <p>
-            <label>
-              <i class="fa fa-child">
-              </i>
-              Kids
-            </label>
-          </p>
-          <input class="w3-input w3-border" max="6" min="0" name="Kids" type="number" value="0"/>
-          <p>
-            <button class="w3-button w3-block w3-green w3-left-align" type="submit">
-              <i class="fa fa-search w3-margin-right">
-              </i>
-              Search availability
-            </button>
-          </p> -->
-        </form>
-      </div>
-    </nav>
-    <!--     <div class="w3-bar-block">
-      <a class="w3-bar-item w3-button w3-padding-16" href="#apartment">
-        <i class="fa fa-building">
-        </i>
-        <input name="" type="button"/>
-        Apartment
-      </a>
-      <a class="w3-bar-item w3-button w3-padding-16" href="javascript:void(0)" onclick="document.getElementById('subscribe').style.display='block'">
-        <i class="fa fa-rss">
-        </i>
-        Subscribe
-      </a>
-      <a class="w3-bar-item w3-button w3-padding-16" href="#contact">
-        <i class="fa fa-envelope">
-        </i>
-        Contact
-      </a>
-    </div> -->
-    <!-- Top menu on small screens -->
-    <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
-      <span class="w3-bar-item">
-        Rental
-      </span>
-      <a class="w3-right w3-bar-item w3-button" href="javascript:void(0)" onclick="w3_open()">
-        <i class="fa fa-bars">
-        </i>
-      </a>
-    </header>
-    <!-- Overlay effect when opening sidebar on small screens -->
-    <div class="w3-overlay w3-hide-large" id="myOverlay" onclick="w3_close()" style="cursor:pointer" title="close side menu">
+</style>
+<body class="w3-content w3-border-left w3-border-right">
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-light-grey w3-collapse w3-top" id="mySidebar" style="z-index:3;width:260px">
+    <div class="w3-container w3-display-container w3-padding-16">
+      <i class="fa fa-remove w3-hide-large w3-button w3-transparent w3-display-topright" onclick="w3_close()">
+      </i>
+      <h3>
+      </h3>
+      <h3>
+      </h3>
+      <h6>
+      </h6>
+      <hr/>
+      <form action="/action_page.php" target="_blank">
+        <button class="w3-button w3-block w3-green w3-margin-bottom">
+          Button
+        </button>
+        <button class="w3-button w3-block w3-green w3-margin-bottom">
+          Button
+        </button>
+        <button class="w3-button w3-block w3-green w3-margin-bottom">
+          Button
+        </button>
+        <button class="w3-button w3-block w3-green w3-margin-bottom">
+          Button
+        </button>
+        <button class="w3-button w3-block w3-green w3-margin-bottom">
+          Button
+        </button>
+        <button class="w3-button w3-block w3-blue w3-margin-bottom">
+          <a href="php/panelofertas.php" target="_blank">
+            Administrador
+          </a>
+        </button>
+      </form>
     </div>
-    <!-- !PAGE CONTENT! -->
-    <div class="w3-main w3-white" style="margin-left:260px">
-      <!-- Push down content on small screens -->
-      <div class="w3-hide-large" style="margin-top:80px">
-      </div>
-      <!-- Slideshow Header -->
-      <div class="w3-container" id="apartment">
-        <h2 class="w3-text-green">
-          Disney World Packages
-        </h2>
-        <div class="w3-display-container mySlides">
-          <img id="imagenserver" src="" style="width:100%;margin-bottom:-6px"/>
-          <div class="w3-display-bottomleft w3-container w3-black">
-            <p>
-              Living Room
-            </p>
-          </div>
+  </nav>
+  <!-- Top menu on small screens -->
+  <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+    <span class="w3-bar-item" style="  white-space: nowrap;
+    overflow: hidden; font-size: 20px;">
+     Disney Packages
+    </span>
+    <a class="w3-right w3-bar-item w3-button" href="javascript:void(0)" onclick="w3_open()">
+      <i class="fa fa-bars">
+      </i>
+    </a>
+  </header>
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" id="myOverlay" onclick="w3_close()" style="cursor:pointer" title="close side menu">
+  </div>
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main w3-white" style="margin-left:260px">
+    <!-- Push down content on small screens -->
+    <div class="w3-hide-large" style="margin-top:80px">
+    </div>
+    <!-- Slideshow Header -->
+    <div class="w3-container" id="apartment">
+      <h2 class="w3-text-green">
+        Disney World Packages
+      </h2>
+   <!--    <div class="w3-display-container mySlides">
+        <img id="imagenserver" src="" style="width:100%;margin-bottom:-6px"/>
+        <div class="w3-display-bottomleft w3-container w3-black">
+          <p>
+            Living Room
+          </p>
         </div>
-        <!-- -->
-      <video id="videoserver" width="100%" height="500" controls autoplay="" loop="">
+      </div> -->
+      <div class="container" style="width: 100%;">
+        <br/>
+        <div class="slideshow-container">
+          <div class="w3-card-4" style=" border: 10px solid  #4CAF50;padding: ">
+            <div class="numbertext">
+            </div>
+            <img id="imajenofertaactual" src="" style="width:100%; height: 600px;"/>
+            <div id="CaptionText" class="text" style="background-color: #4CAF50; color: white; padding: 10px; font-size: 40px; width:98%;">
 
-
-
-        </video>
-     <!--    <video  controls>
-          <source id="" src="prueba.mp4" type="video/mp4"/>
-
-            <source src="myVideo.webm" type="video/webm">
-          </source>
-
-        </video> -->
-        <div class="w3-display-container mySlides">
+            </div>
+          </div>
+          <!--      <div class=" mySlides">
+            <div class="numbertext">
+            </div>
+            <img src="" style="width:100%"/>
+            <div class="text">
+            </div>
+          </div>
+          <div class="mySlides ">
+            <div class="numbertext">
+            </div>
+            <img src="" style="width:100%"/>
+            <div class="text">
+            </div>
+          </div> -->
+          <a class="prev" id="prev" style="background-color: #4CAF50; border-radius: 0px 50px 50px 0px;">
+            ❮
+          </a>
+          <a class="next" id="next" style="background-color: #4CAF50;border-radius: 50px 0px 0px 50px;">
+            ❯
+          </a>
+        </div>
+        <br>
+          <div id="indiceimg" style="text-align:center">
+            <!--
+            <span class="dot">
+            </span>
+            <span class="dot">
+            </span>
+            <span class="dot">
+            </span>
+            -->
+          </div>
+        </br>
+      </div>
+      <!-- -->
+      <video autoplay="" controls="" height="500" id="videoserver" loop="" width="100%">
+      </video>
+      <!--         <div class="w3-display-container mySlides">
           <img src="" style="width:100%;margin-bottom:-6px"/>
           <div class="w3-display-bottomleft w3-container w3-black">
             <p>
@@ -173,42 +161,44 @@
               Living Room II
             </p>
           </div>
-        </div>
+        </div> -->
+    </div>
+    <div class="w3-row-padding w3-section">
+      <div class="w3-col s3">
+        <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(1)" src="" style="width:100%;cursor:pointer" title="Living room"/>
       </div>
-      <div class="w3-row-padding w3-section">
-        <div class="w3-col s3">
-          <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(1)" src="" style="width:100%;cursor:pointer" title="Living room"/>
-        </div>
-        <div class="w3-col s3">
-          <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(2)" src="" style="width:100%;cursor:pointer" title="Dining room"/>
-        </div>
-        <div class="w3-col s3">
-          <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(3)" src="" style="width:100%;cursor:pointer" title="Bedroom"/>
-        </div>
-        <div class="w3-col s3">
-          <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(4)" src="" style="width:100%;cursor:pointer" title="Second Living Room"/>
-        </div>
-        <div class="w3-col s3">
-          <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(1)" src="" style="width:100%;cursor:pointer" title="Living room"/>
-        </div>
-        <div class="w3-col s3">
-          <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(2)" src="" style="width:100%;cursor:pointer" title="Dining room"/>
-        </div>
-        <div class="w3-col s3">
-          <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(3)" src="g" style="width:100%;cursor:pointer" title="Bedroom"/>
-        </div>
-        <div class="w3-col s3">
-          <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(4)" src="" style="width:100%;cursor:pointer" title="Second Living Room"/>
-        </div>
+      <div class="w3-col s3">
+        <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(2)" src="" style="width:100%;cursor:pointer" title="Dining room"/>
       </div>
-      <div class="w3-container">
-        <h4>
-          <strong id="nombreOfertaDisplay">
-            The space
-          </strong>
-          <!-- <input id="selecciona" name="btn" type="button" value="Test"/> -->
-        </h4>
-        <div class="w3-row w3-large">
+      <div class="w3-col s3">
+        <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(3)" src="" style="width:100%;cursor:pointer" title="Bedroom"/>
+      </div>
+      <div class="w3-col s3">
+        <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(4)" src="" style="width:100%;cursor:pointer" title="Second Living Room"/>
+      </div>
+      <div class="w3-col s3">
+        <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(1)" src="" style="width:100%;cursor:pointer" title="Living room"/>
+      </div>
+      <div class="w3-col s3">
+        <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(2)" src="" style="width:100%;cursor:pointer" title="Dining room"/>
+      </div>
+      <div class="w3-col s3">
+        <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(3)" src="g" style="width:100%;cursor:pointer" title="Bedroom"/>
+      </div>
+      <div class="w3-col s3">
+        <img class="demo w3-opacity w3-hover-opacity-off" onclick="currentDiv(4)" src="" style="width:100%;cursor:pointer" title="Second Living Room"/>
+      </div>
+    </div>
+    <div class="w3-container">
+    </div>
+    <div class="w3-container">
+      <h4>
+        <strong id="nombreOfertaDisplay">
+          The space
+        </strong>
+        <!-- <input id="selecciona" name="btn" type="button" value="Test"/> -->
+      </h4>
+      <!--   <div class="w3-row w3-large">
           <div class="w3-col s6">
             <p>
               <i class="fa fa-fw fa-male">
@@ -238,14 +228,14 @@
               Check Out: 12PM
             </p>
           </div>
-        </div>
-        <hr/>
-        <h4>
+        </div> -->
+      <hr/>
+      <!--     <h4>
           <strong>
             Amenities
           </strong>
-        </h4>
-        <div class="w3-row w3-large">
+        </h4> -->
+      <!--    <div class="w3-row w3-large">
           <div class="w3-col s6">
             <p>
               <i class="fa fa-fw fa-shower">
@@ -280,17 +270,18 @@
               Accessible
             </p>
           </div>
-        </div>
-        <hr/>
-        <h4>
+        </div> -->
+      <hr/>
+      <!--    <h4>
           <strong>
             Extra Info
           </strong>
         </h4>
-        <p>
+ -->
+      <!--    <p>
           Our apartment is really clean and we like to keep it that way. Enjoy the lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-        <p>
+        </p> -->
+      <!--      <p>
           We accept:
           <i class="fa fa-credit-card w3-large">
           </i>
@@ -302,9 +293,9 @@
           </i>
           <i class="fa fa-cc-paypal w3-large">
           </i>
-        </p>
-        <hr/>
-        <h4>
+        </p> -->
+      <hr/>
+      <!--   <h4>
           <strong>
             Rules
           </strong>
@@ -319,11 +310,11 @@
           <button class="w3-button w3-green w3-third" onclick="document.getElementById('subscribe').style.display='block'">
             Subscribe
           </button>
-        </p>
-      </div>
-      <hr/>
-      <!-- Contact -->
-      <div class="w3-container" id="contact">
+        </p> -->
+    </div>
+    <hr/>
+    <!-- Contact -->
+    <!--   <div class="w3-container" id="contact">
         <h2>
           Contact
         </h2>
@@ -356,38 +347,38 @@
             Send a Message
           </button>
         </form>
+      </div> -->
+    <footer class="w3-container w3-padding-16" style="margin-top:32px">
+      Powered by
+      <a class="w3-hover-text-green" href="https://www.w3schools.com/w3css/default.asp" target="_blank" title="W3.CSS">
+        w3.css
+      </a>
+    </footer>
+    <!-- End page content -->
+  </div>
+  <!-- Subscribe Modal -->
+  <div class="w3-modal" id="subscribe">
+    <div class="w3-modal-content w3-animate-zoom w3-padding-large">
+      <div class="w3-container w3-white w3-center">
+        <i class="fa fa-remove w3-button w3-xlarge w3-right w3-transparent" onclick="document.getElementById('subscribe').style.display='none'">
+        </i>
+        <h2 class="w3-wide">
+          SUBSCRIBE
+        </h2>
+        <p>
+          Join our mailing list to receive updates on available dates and special offers.
+        </p>
+        <p>
+          <input class="w3-input w3-border" placeholder="Enter e-mail" type="text"/>
+        </p>
+        <button class="w3-button w3-padding-large w3-green w3-margin-bottom" onclick="document.getElementById('subscribe').style.display='none'" type="button">
+          Subscribe
+        </button>
       </div>
-      <footer class="w3-container w3-padding-16" style="margin-top:32px">
-        Powered by
-        <a class="w3-hover-text-green" href="https://www.w3schools.com/w3css/default.asp" target="_blank" title="W3.CSS">
-          w3.css
-        </a>
-      </footer>
-      <!-- End page content -->
     </div>
-    <!-- Subscribe Modal -->
-    <div class="w3-modal" id="subscribe">
-      <div class="w3-modal-content w3-animate-zoom w3-padding-large">
-        <div class="w3-container w3-white w3-center">
-          <i class="fa fa-remove w3-button w3-xlarge w3-right w3-transparent" onclick="document.getElementById('subscribe').style.display='none'">
-          </i>
-          <h2 class="w3-wide">
-            SUBSCRIBE
-          </h2>
-          <p>
-            Join our mailing list to receive updates on available dates and special offers.
-          </p>
-          <p>
-            <input class="w3-input w3-border" placeholder="Enter e-mail" type="text"/>
-          </p>
-          <button class="w3-button w3-padding-large w3-green w3-margin-bottom" onclick="document.getElementById('subscribe').style.display='none'" type="button">
-            Subscribe
-          </button>
-        </div>
-      </div>
-    </div>
-    <script>
-      // Script to open and close sidebar when on tablets and phones
+  </div>
+  <script>
+    // Script to open and close sidebar when on tablets and phones
 function w3_open() {
   document.getElementById("mySidebar").style.display = "block";
   document.getElementById("myOverlay").style.display = "block";
@@ -425,19 +416,18 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " w3-opacity-off";
 }
-    </script>
-    <script src="js/jquery.min.js" type="text/javascript">
-    </script>
-    <script src="js/js.js" type="text/javascript">
-    </script>
-    <script src="js/selectofertas.js" type="text/javascript">
-    </script>
-    <script type="text/javascript">
-      $(document).ready(function() {
+  </script>
+  <script src="js/jquery.min.js" type="text/javascript">
+  </script>
+  <script src="js/js.js" type="text/javascript">
+  </script>
+  <script src="js/selectofertas.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
 index();
 pruebaseleccion();
 
 });
-    </script>
-  </body>
-</html>
+  </script>
+</body>
