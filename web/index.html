@@ -20,11 +20,17 @@
     body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 .mySlides {display: none}
 .w3-content{
-  max-width: 1200px;
+  max-width: 1200px;}
+  #videoserver {
+    margin-top: 30px ;
+    width: 100%;
+    /*  position: absolute;
+    left: 0px;
+    top: 0px;*/
 }
   </style>
   <!-- <body class="w3-content w3-border-left w3-border-right"> -->
-  <body class="w3-content w3-border-left w3-border-right" style="width:100%; padding: 0px; margin: 0px 0px 0px 200px;">
+  <body class="w3-content w3-border-left w3-border-right" style="width:100%; ">
     <!-- Sidebar/menu -->
     <nav class="w3-sidebar w3-light-grey w3-collapse w3-top" id="mySidebar" style="z-index:3;width:260px">
       <div class="w3-container w3-display-container w3-padding-16">
@@ -87,7 +93,7 @@
         </h2>
         <div class="container" style="width: 100%;">
           <br/>
-          <div "="" class="slideshow-container">
+          <div  class="slideshow-container">
             <div class="w3-card-4" style=" border: 10px solid  #4CAF50;padding: ">
               <div class="numbertext">
               </div>
@@ -95,9 +101,11 @@
               <div class="text" id="" style="background-color: #4CAF50; color: white; padding: 10px; font-size: 40px; width:98%;">
                 <div class="" id="CaptionText">
                 </div>
-                <button class="w3-button w3-white w3-border w3-border-red w3-round-large" style=" width: 200px; height: 50px; font-size: 20px;">
-                  Button
+                <button class="w3-button w3-white w3-border w3-border-red w3-round-large" style=" width: 250px; height: 50px; font-size: 20px;">
+                  Comprar esta ofrerta
                 </button>
+                <p id="descripcionOferta" style="font-size: 20px; text-align: left; margin-top: 10px;">Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Nam dicta iste enim excepturi, voluptatum necessitatibus doloribus error ipsum eaque, magnam vero exercitationem? Vero harum incidunt culpa animi quaerat, minima, cupiditate.</p>
+                <p id="precio"></p>
               </div>
             </div>
             <a class="prev" id="prev" style="background-color: #4CAF50; border-radius: 0px 50px 50px 0px;">
@@ -112,7 +120,7 @@
           </div>
         </div>
         <!-- -->
-        <video autoplay="" controls="" height="500" id="videoserver" loop="" style="margin-top: 25px;" width="100%">
+        <video autoplay="" controls="" height="500" id="videoserver" loop="" style="">
         </video>
       </div>
       <div class="w3-row-padding w3-section">

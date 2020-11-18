@@ -3,6 +3,7 @@ function pruebaseleccion(argument) {
     // var selecciona = document.getElementById('selecciona');
 
     function iniciodata() {
+        posicion = 0;
 
         $.ajax({
                 method: 'POST',
@@ -29,16 +30,21 @@ function pruebaseleccion(argument) {
                 // }
                 // --- 5 de noviembre se cambio esta linea para delegar los datos en la pagina 
                 var nombreOfertaDisplay = document.getElementById('nombreOfertaDisplay');
+                descripcionOferta = document.getElementById('descripcionOferta');
 
                 // var imagenserver = document.getElementById('imagenserver');
                 var videoserver = document.getElementById('videoserver');
+                precio = document.getElementById('precio');
 
                 // video.style.display = "none";
 
-                nombreOfertaDisplay.innerHTML = data[data.length - 1]['nombreOferta'];
+                nombreOfertaDisplay.innerHTML = data[posicion]['nombreOferta'];
+                precio.innerHTML = "$ " + data[posicion]['precio'];
                 // imagenserver.src = "php/" + data[data.length - 1]['imagen'];
                 console.log(data[data.length - 1]['video']);
-                videoserver.src = "php/" + data[data.length - 1]['video'];
+                videoserver.src = "php/" + data[posicion]['video'];
+
+                descripcionOferta.innerHTML = data[posicion]['descripcionOferta'];
 
                 console.log(data.length - 1);
 
@@ -56,10 +62,10 @@ function pruebaseleccion(argument) {
                         indiceimg = document.getElementById('indiceimg'),
                         imajenofertaactual = document.getElementById('imajenofertaactual'),
                         list = [],
-                        posicion = 0,
+
                         captionText = document.getElementById('CaptionText');
 
-                    for (var i = 0; i < data.length - 1; i++) {
+                    for (var i = 0; i < data.length; i++) {
 
                         list[i] = document.createElement("spam");
                         list[i].classList.add("dot");
@@ -81,6 +87,7 @@ function pruebaseleccion(argument) {
                 next.addEventListener("click", cambiaOferta);
 
                 function cambiaOferta(argument) {
+
                     console.log(this);
                     console.log(data.length);
                     console.log((posicion > data.lengt - 1));
@@ -111,10 +118,14 @@ function pruebaseleccion(argument) {
                     console.log(posicion);
                     imajenofertaactual.src = "php/" + data[posicion]['imagen'];
                     captionText.innerHTML = data[posicion]['nombreOferta'];
+                    videoserver.src = "php/" + data[posicion]['video'];
+                    descripcionOferta.innerHTML = data[posicion]['descripcionOferta'];
+                    precio.innerHTML = "$ " + data[posicion]['precio'];
                 }
 
             })
             .fail(function(data) {
+
                 console.log('fail');
                 console.log(data);
             });

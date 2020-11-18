@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <title>
-    Panel
+    Panel Ofertas
   </title>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -23,6 +23,7 @@
   bottom: 0;
   height: inherit;
 }
+
   </style>
   <body>
     <!-- Navbar -->
@@ -36,7 +37,7 @@
         <a class="w3-bar-item w3-button w3-theme-l1" href="#">
           Logo
         </a>
-        <a class="w3-bar-item w3-button w3-hide-small w3-hover-white" href="#">
+<!--         <a class="w3-bar-item w3-button w3-hide-small w3-hover-white" href="#">
           About
         </a>
         <a class="w3-bar-item w3-button w3-hide-small w3-hover-white" href="#">
@@ -53,7 +54,7 @@
         </a>
         <a class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white" href="#">
           Partners
-        </a>
+        </a> -->
       </div>
     </div>
     <!-- Sidebar -->

@@ -99,11 +99,11 @@ VALUES ('$nombreOferta ', '$descripcionOferta ','$precio' ,'$fechavigencia','$pa
             $temp_name_video,
             $path_filename_ext_video);
 
-        echo "true";
+        echo true;
 
     } else {
 
-        echo "false";
+        echo false;
     }
 // ---------------------------------
 
