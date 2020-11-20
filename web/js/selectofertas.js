@@ -85,6 +85,7 @@ function pruebaseleccion(argument) {
                 captionText.innerHTML = data[posicion]['nombreOferta'];
                 prev.addEventListener("click", cambiaOferta);
                 next.addEventListener("click", cambiaOferta);
+                comporarOfertaAhora();
 
                 function cambiaOferta(argument) {
 
@@ -134,6 +135,16 @@ function pruebaseleccion(argument) {
 
         for (var i = 0; i < puruebimg.length; i++) {
             console.log(puruebimg[i]);
+        }
+
+        function comporarOfertaAhora(argument) {
+
+            cuerpo = document.getElementById('cuerpo');
+            comprarAhora = document.getElementById('comprarAhora');
+
+            comprarAhora.addEventListener("click", function(argument) {
+                cuerpo.style.display = "none";
+            });
         }
 
     };
