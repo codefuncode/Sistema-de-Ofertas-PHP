@@ -31,7 +31,7 @@ function panelofertas(argument) {
 
                     console.log(data);
 
-                    if (data == "true") {
+                    if (data == 1) {
                         // ---------------------------
                         //  esto es de la libertaria swetalert
                         swal({
