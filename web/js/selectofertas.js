@@ -3,14 +3,18 @@ function pruebaseleccion(argument) {
     // var selecciona = document.getElementById('selecciona');
 
     function iniciodata() {
-        posicion = 0;
+        targetaCompra = document.getElementById('targetaCompra');
+
+        targetaCompra.style.display = "none";
+        var posicion = 0;
+        var dataresivida;
 
         $.ajax({
                 method: 'POST',
                 url: 'php/selecionaofertas.php',
                 data: {
                     json: JSON.stringify({
-                        "hola": "hola"
+                        "x": "x"
                     })
                 },
                 dataType: 'json'
@@ -19,16 +23,6 @@ function pruebaseleccion(argument) {
                 // data = JSON.stringify(data);
                 console.log(data);
 
-                // for (var i = 0; i < data.length; i++) {
-
-                //     console.log(data[i]['nombreOferta']);
-                //     console.log(data[i]['descripcionOferta']);
-                //     console.log(data[i]['precio']);
-                //     console.log(data[i]['fechavigencia']);
-                //     console.log("================= " + i + " =================");
-
-                // }
-                // --- 5 de noviembre se cambio esta linea para delegar los datos en la pagina 
                 var nombreOfertaDisplay = document.getElementById('nombreOfertaDisplay');
                 descripcionOferta = document.getElementById('descripcionOferta');
 
@@ -53,6 +47,8 @@ function pruebaseleccion(argument) {
                 // videoserver.src = srt.slice(3, 13);
 
             }).always(function(data) {
+
+                dataresivida = data;
 
                 if (data) {
 
@@ -124,6 +120,8 @@ function pruebaseleccion(argument) {
                     precio.innerHTML = "$ " + data[posicion]['precio'];
                 }
 
+                console.log(data[posicion]['idoferta']);
+
             })
             .fail(function(data) {
 
@@ -141,9 +139,15 @@ function pruebaseleccion(argument) {
 
             cuerpo = document.getElementById('cuerpo');
             comprarAhora = document.getElementById('comprarAhora');
-
             comprarAhora.addEventListener("click", function(argument) {
                 cuerpo.style.display = "none";
+                targetaCompra.style.display = "";
+                console.log(dataresivida[posicion]['idoferta']);
+                TargetaImagen.src = "php/" + dataresivida[posicion]['imagen'];
+                TargetaTitulo.innerHTML = dataresivida[posicion]['nombreOferta'];
+                TargetaPrecio.innerHTML = "$ " + dataresivida[posicion]['precio'];
+                TargetaDescripcion.innerHTML = dataresivida[posicion]['descripcionOferta'];
+
             });
         }
 

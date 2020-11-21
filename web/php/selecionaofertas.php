@@ -7,7 +7,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT nombreOferta, descripcionOferta, precio,fechavigencia,imagen,video FROM ofertas";
+$sql = "SELECT nombreOferta, descripcionOferta, precio,fechavigencia,imagen,video,idoferta FROM ofertas";
 
 $result = $conn->query($sql);
 
@@ -23,6 +23,9 @@ if ($result->num_rows > 0) {
                 'fechavigencia'     => $row['fechavigencia'],
                 'imagen'            => $row['imagen'],
                 'video'             => $row['video'],
+                'idoferta'          => $row['idoferta'],
+
+                // idoferta
             )
         );
 
