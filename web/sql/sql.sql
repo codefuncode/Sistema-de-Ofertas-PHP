@@ -28,7 +28,7 @@ create database Disney
 		telefonoCliente varchar(20), 
 		-- Esta sera la descripción de la oferta 
 		idOferta TEXT NOT NULL,
-
+	PRIMARY KEY (idcliente)
 
 ); 
 

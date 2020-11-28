@@ -1,4 +1,5 @@
-jk, .k
+var dataresivida,
+    posicion = 0;
 
 function pruebaseleccion(argument) {
 
