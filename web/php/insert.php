@@ -109,6 +109,9 @@ VALUES ('$nombreOferta ', '$descripcionOferta ','$precio' ,'$fechavigencia','$pa
 
     $conn->close();
 
+}else{
+    
+   echo false;  
 }
 
 // ===========================================================

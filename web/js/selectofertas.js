@@ -1,3 +1,5 @@
+jk, .k
+
 function pruebaseleccion(argument) {
 
     // var selecciona = document.getElementById('selecciona');
@@ -6,8 +8,6 @@ function pruebaseleccion(argument) {
         targetaCompra = document.getElementById('targetaCompra');
 
         targetaCompra.style.display = "none";
-        var posicion = 0;
-        var dataresivida;
 
         $.ajax({
                 method: 'POST',
@@ -113,6 +113,7 @@ function pruebaseleccion(argument) {
                     }
 
                     console.log(posicion);
+
                     imajenofertaactual.src = "php/" + data[posicion]['imagen'];
                     captionText.innerHTML = data[posicion]['nombreOferta'];
                     videoserver.src = "php/" + data[posicion]['video'];
@@ -139,6 +140,8 @@ function pruebaseleccion(argument) {
 
             cuerpo = document.getElementById('cuerpo');
             comprarAhora = document.getElementById('comprarAhora');
+
+            // ===========================================================
             comprarAhora.addEventListener("click", function(argument) {
                 cuerpo.style.display = "none";
                 targetaCompra.style.display = "";
@@ -149,6 +152,7 @@ function pruebaseleccion(argument) {
                 TargetaDescripcion.innerHTML = dataresivida[posicion]['descripcionOferta'];
 
             });
+            // ===========================================================
         }
 
     };

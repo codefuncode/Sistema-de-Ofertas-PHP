@@ -19,6 +19,25 @@ create database Disney
 		PRIMARY KEY (idoferta)
 
 ); 
+	CREATE TABLE cliente (
+		-- El id que se generara automáticamente cada ves que se ingrese un nuevo registro
+		idcliente int NOT NULL AUTO_INCREMENT,
+		-- Nombre de la oferta para que los humanos lo entiendan 
+		nombreCliente varchar(20), 
+		emailCliente varchar(20), 
+		telefonoCliente varchar(20), 
+		-- Esta sera la descripción de la oferta 
+		idOferta TEXT NOT NULL,
+
+
+); 
+
+
+
+
+
+
+
 
 	
 	
