@@ -14,25 +14,45 @@ var input_usuario =
 
 btn_input_usuario[0].addEventListener('click', function(argument) {
 
-    if (input_usuario[0] == "" && input_usuario[1] == "" && input_usuario[3] == "") {
+    if (ValidateEmail(input_usuario[1].value)) {
+
+        if (input_usuario[0] == "" &&
+            input_usuario[1] == "" &&
+            input_usuario[3] == "") {
+
+            console.log("campos vacios");
+
+        } else {
+
+            $.ajax({
+                    method: "POST",
+                    url: "php/compraoferta.php",
+                    data: {
+                        nombreCliente: input_usuario[0].value,
+                        emailCliente: input_usuario[1].value,
+                        telefonoCliente: input_usuario[2].value,
+                        idOferta: document.getElementById("ide_de_turno").textContent
+
+                    }
+                })
+                .done(function(msg) {
+                    console.log(msg);
+                });
+
+            console.log('todo perfecto')
+        }
 
     } else {
 
-        $.ajax({
-                method: "POST",
-                url: "php/compraoferta.php",
-                data: {
-                    nombreCliente: input_usuario[0].value,
-                    emailCliente: input_usuario[1].value,
-                    telefonoCliente: input_usuario[2].value,
-                    idOferta: document.getElementById("ide_de_turno").textContent
+        console.log("email incorecto")
+    }
 
-                }
-            })
-            .done(function(msg) {
-                console.log(msg);
-            });
-
+    function ValidateEmail(mail) {
+        if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail)) {
+            return (true)
+        }
+        // alert("You have entered an invalid email address!")
+        return (false)
     }
 
 });

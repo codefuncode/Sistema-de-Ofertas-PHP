@@ -1,5 +1,6 @@
 var dataresivida,
-    posicion = 0;
+    posicion = 0,
+    id_oferta = "";
 
 function pruebaseleccion(argument) {
 
@@ -42,6 +43,7 @@ function pruebaseleccion(argument) {
                 descripcionOferta.innerHTML = data[posicion]['descripcionOferta'];
 
                 console.log(data.length - 1);
+                id_oferta = data[posicion]['idoferta'];
 
                 // var srt = data[data.length - 1]['video'];
 
@@ -120,10 +122,9 @@ function pruebaseleccion(argument) {
                     videoserver.src = "php/" + data[posicion]['video'];
                     descripcionOferta.innerHTML = data[posicion]['descripcionOferta'];
                     precio.innerHTML = "$ " + data[posicion]['precio'];
-
+                    id_oferta = data[posicion]['idoferta'];
+                    console.log(data[posicion]['idoferta']);
                 }
-
-                console.log(data[posicion]['idoferta']);
 
             })
             .fail(function(data) {
@@ -152,7 +153,7 @@ function pruebaseleccion(argument) {
                 TargetaTitulo.innerHTML = dataresivida[posicion]['nombreOferta'];
                 TargetaPrecio.innerHTML = "$ " + dataresivida[posicion]['precio'];
                 TargetaDescripcion.innerHTML = dataresivida[posicion]['descripcionOferta'];
-                document.getElementById('ide_de_turno').innerHTML = posicion;
+                document.getElementById('ide_de_turno').innerHTML = id_oferta;
 
             });
             // ===========================================================
