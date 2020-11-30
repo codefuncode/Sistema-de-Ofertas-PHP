@@ -120,6 +120,7 @@ function pruebaseleccion(argument) {
                     videoserver.src = "php/" + data[posicion]['video'];
                     descripcionOferta.innerHTML = data[posicion]['descripcionOferta'];
                     precio.innerHTML = "$ " + data[posicion]['precio'];
+
                 }
 
                 console.log(data[posicion]['idoferta']);
@@ -151,6 +152,7 @@ function pruebaseleccion(argument) {
                 TargetaTitulo.innerHTML = dataresivida[posicion]['nombreOferta'];
                 TargetaPrecio.innerHTML = "$ " + dataresivida[posicion]['precio'];
                 TargetaDescripcion.innerHTML = dataresivida[posicion]['descripcionOferta'];
+                document.getElementById('ide_de_turno').innerHTML = posicion;
 
             });
             // ===========================================================
