@@ -27,10 +27,19 @@ create database Disney
 		emailCliente varchar(20), 
 		telefonoCliente varchar(20), 
 		-- Esta sera la descripción de la oferta 
-		idOferta TEXT NOT NULL,
+		idOferta int NOT NULL,
 	PRIMARY KEY (idcliente)
 
 ); 
+
+	CREATE TABLE reservacion (
+
+		idreservacion NOT NULL AUTO_INCREMENT,
+		idcliente int,
+		idoferta int,
+		fecha DATE,
+		PRIMARY KEY (idreservacion)
+	);
 
 
 

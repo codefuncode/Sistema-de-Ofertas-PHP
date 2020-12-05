@@ -56,49 +56,49 @@ function panelofertas(argument) {
                 });
             // =================================================
 
-            function capturavalores(argument) {
-
-                let nombreOferta =
-                    document.getElementById('nombreOferta'),
-                    descripcionOferta =
-                    document.getElementById('descripcionOferta'),
-                    precio =
-                    document.getElementById('precio'),
-                    fechavigencia =
-                    document.getElementById('fechavigencia'),
-                    video =
-                    document.getElementById('video'),
-                    imagen =
-                    document.getElementById('imagen');
-
-                // =============================================================
-                // let formData = new FormData();
-                // formData.append('imagen', imagen.files[0]);
-                // =============================================================
-
-                //  falta colocar comentarios sobre laimplementacion de  el uso de formdata para enviar datos al servidor 
-                let formData = new FormData();
-                formData.append('nombreOferta', nombreOferta.value);
-                formData.append('descripcionOferta', descripcionOferta.value);
-                formData.append('precio', precio.value);
-                formData.append('fechavigencia', fechavigencia.value);
-                formData.append('video', video.files[0]);
-                formData.append('imagen', imagen.files[0]);
-
-                let datadevuelta = formData;
-
-                nombreOferta.value = "";
-
-                descripcionOferta.value = "";
-
-                precio.value = 0;
-
-                fechavigencia.value = "";
-                // console.log(JSON.stringify(datadevuelta));
-                return datadevuelta;
-
-            }
-
         };
+
+}
+
+function capturavalores(argument) {
+
+    let nombreOferta =
+        document.getElementById('nombreOferta'),
+        descripcionOferta =
+        document.getElementById('descripcionOferta'),
+        precio =
+        document.getElementById('precio'),
+        fechavigencia =
+        document.getElementById('fechavigencia'),
+        video =
+        document.getElementById('video'),
+        imagen =
+        document.getElementById('imagen');
+
+    // =============================================================
+    // let formData = new FormData();
+    // formData.append('imagen', imagen.files[0]);
+    // =============================================================
+
+    //  falta colocar comentarios sobre laimplementacion de  el uso de formdata para enviar datos al servidor 
+    let formData = new FormData();
+    formData.append('nombreOferta', nombreOferta.value);
+    formData.append('descripcionOferta', descripcionOferta.value);
+    formData.append('precio', precio.value);
+    formData.append('fechavigencia', fechavigencia.value);
+    formData.append('video', video.files[0]);
+    formData.append('imagen', imagen.files[0]);
+
+    let datadevuelta = formData;
+
+    nombreOferta.value = "";
+
+    descripcionOferta.value = "";
+
+    precio.value = 0;
+
+    fechavigencia.value = "";
+    // console.log(JSON.stringify(datadevuelta));
+    return datadevuelta;
 
 }
