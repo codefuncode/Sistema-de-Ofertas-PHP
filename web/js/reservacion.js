@@ -30,8 +30,8 @@ btn_input_usuario[0].addEventListener('click', function(argument) {
                     data: {
                         nombreCliente: input_usuario[0].value,
                         emailCliente: input_usuario[1].value,
-                        telefonoCliente: input_usuario[2].value,
-                        idOferta: document.getElementById("ide_de_turno").textContent
+                        telefonoCliente: input_usuario[2].value
+                        // idOferta: document.getElementById("ide_de_turno").textContent
 
                     }
                 })

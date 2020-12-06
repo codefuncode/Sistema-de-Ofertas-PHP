@@ -13,6 +13,7 @@ function compruebaloguin(argument) {
     var inputs = document.querySelectorAll('.registrese input');
     console.log(inputs.length);
     for (var i = 0; i < inputs.length; i++) {
+        inputs[i].value = "";
         console.log(inputs[i]);
     }
 
@@ -20,9 +21,16 @@ function compruebaloguin(argument) {
         let datos = {
             nombreCliente: inputs[0].value,
             emailCliente: inputs[1].value,
-            telefonoCliente: inputs[2].value,
-            pass: inputs[3].value,
+            pass: inputs[2].value,
+            telefonoCliente: inputs[3].value,
         }
-        console.log(datos);
+        $.ajax({
+                method: "POST",
+                url: "php/reguistro.php",
+                data: datos
+            })
+            .done(function(msg) {
+                console.log(msg);
+            });
     });
 }

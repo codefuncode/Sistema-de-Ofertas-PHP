@@ -37,24 +37,7 @@
         <a class="w3-bar-item w3-button w3-theme-l1" href="#">
           Logo
         </a>
-<!--         <a class="w3-bar-item w3-button w3-hide-small w3-hover-white" href="#">
-          About
-        </a>
-        <a class="w3-bar-item w3-button w3-hide-small w3-hover-white" href="#">
-          Values
-        </a>
-        <a class="w3-bar-item w3-button w3-hide-small w3-hover-white" href="#">
-          News
-        </a>
-        <a class="w3-bar-item w3-button w3-hide-small w3-hover-white" href="#">
-          Contact
-        </a>
-        <a class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white" href="#">
-          Clients
-        </a>
-        <a class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white" href="#">
-          Partners
-        </a> -->
+
       </div>
     </div>
     <!-- Sidebar -->
