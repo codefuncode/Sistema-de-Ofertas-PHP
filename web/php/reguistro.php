@@ -14,18 +14,32 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 $email = $_POST['emailCliente'];
-$sql2  = "SELECT emailCliente FROM cliente WHERE emailCliente='$email'";
+$sql2  = "SELECT *  FROM cliente WHERE emailCliente='$email'";
 
 $result = $conn->query($sql2);
 
-if ($result->num_rows > 0) {
+if ($conn->affected_rows > 0) {
 
-    echo 'El coreo ya esta en uso ';
+    $res = [];
+    while ($row = $result->fetch_assoc()) {
+
+        array_push($res,
+            array(
+                'respuesta'     => "existe",
+                'idcliente'     => $row['idcliente'],
+                'nombreCliente' => $row['nombreCliente'],
+
+            )
+        );
+
+    }
+
+    echo json_encode($res);
 
 } else {
 
     $sql = "INSERT INTO cliente (nombreCliente, emailCliente, pass, telefonoCliente)
-VALUES (?,?,?,?)";
+    VALUES (?,?,?,?)";
     $stmt = $conn->prepare($sql);
 
     $stmt->bind_param("ssss", $nombreCliente, $emailCliente, $pass, $telefonoCliente);
@@ -39,11 +53,15 @@ VALUES (?,?,?,?)";
 
         $stmt->close();
 
-        echo "ok";
+        $res = array('respuesta' => "ok");
+
+        echo json_encode($res);
 
     } else {
 
-        echo 'No';
+        $res = array('respuesta' => "no");
+
+        echo json_encode($res);
     }
 
     $conn->close();

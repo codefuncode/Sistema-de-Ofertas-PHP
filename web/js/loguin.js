@@ -4,11 +4,14 @@ function compruebaloguin(argument) {
     let formulario = document.querySelector(".formulario");
     let registrese = document.querySelector(".registrese");
     let inicioseccion = document.querySelector(".inicioseccion");
-    let btn_registro = document.querySelector(".registrese button");
+    let btn_registro = document.querySelectorAll(".registrese button");
+
+    let inicio = document.getElementById('inicio');
 
     cuerpo.style.display = "none";
     targetaCompra.style.display = "none";
     formulario.style.display = "none";
+    registrese.style.display = "";
 
     var inputs = document.querySelectorAll('.registrese input');
     console.log(inputs.length);
@@ -17,20 +20,62 @@ function compruebaloguin(argument) {
         console.log(inputs[i]);
     }
 
-    btn_registro.addEventListener("click", function(argument) {
-        let datos = {
-            nombreCliente: inputs[0].value,
-            emailCliente: inputs[1].value,
-            pass: inputs[2].value,
-            telefonoCliente: inputs[3].value,
+    btn_registro[0].addEventListener("click", function(argument) {
+
+        if (inputs[0].value == "" || inputs[1].value == "" || inputs[2].value == "" || inputs[3].value == "") {
+
+            console.log('Algo esta vacio');
+
+        } else {
+            let datos = {
+                nombreCliente: inputs[0].value,
+                emailCliente: inputs[1].value,
+                pass: inputs[2].value,
+                telefonoCliente: inputs[3].value,
+            }
+            $.ajax({
+                    method: "POST",
+                    url: "php/reguistro.php",
+                    data: datos
+                })
+                .done(function(msg) {
+                    var myObj = JSON.parse(msg);
+                    // var myObj = JSON.stringify(msg);
+
+                    if (myObj[0]) {
+
+                        if (myObj[0].respuesta == "existe") {
+
+                            cuerpo.style.display = "";
+                            targetaCompra.style.display = "none";
+                            formulario.style.display = "none";
+                            registrese.style.display = "none";
+
+                            console.log(myObj);
+                            // console.log(myObj.nombreCliente);
+
+                        } else if (myObj.respuesta == "ok") {
+
+                        }
+
+                    } else {
+
+                        console.log(myObj);
+                    }
+
+                    console.log('=================');
+                    console.log('Mensajes sin filtro para pruebas')
+                    console.log(msg);
+                    console.log('=================');
+                });
+
         }
-        $.ajax({
-                method: "POST",
-                url: "php/reguistro.php",
-                data: datos
-            })
-            .done(function(msg) {
-                console.log(msg);
-            });
+
     });
+    // inicio.addEventListener("click", function(argument) {
+    //     cuerpo.style.display = "block";
+    //     targetaCompra.style.display = "block";
+    //     formulario.style.display = "block";
+    //     registrese.style.display = "none";
+    // });
 }
