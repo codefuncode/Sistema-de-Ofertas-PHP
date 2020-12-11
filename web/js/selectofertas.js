@@ -148,6 +148,7 @@ function pruebaseleccion(argument) {
             comprarAhora.addEventListener("click", function(argument) {
                 cuerpo.style.display = "none";
                 targetaCompra.style.display = "";
+                document.querySelector(".formulario").style.display = "";
                 console.log(dataresivida[posicion]['idoferta']);
                 TargetaImagen.src = "php/" + dataresivida[posicion]['imagen'];
                 TargetaTitulo.innerHTML = dataresivida[posicion]['nombreOferta'];

@@ -72,10 +72,12 @@ function compruebaloguin(argument) {
         }
 
     });
-    // inicio.addEventListener("click", function(argument) {
-    //     cuerpo.style.display = "block";
-    //     targetaCompra.style.display = "block";
-    //     formulario.style.display = "block";
-    //     registrese.style.display = "none";
-    // });
+    inicio.addEventListener("click", function(argument) {
+
+        console.log(this);
+        cuerpo.style.display = "";
+        targetaCompra.style.display = "none";
+        formulario.style.display = "none";
+        registrese.style.display = "none";
+    });
 }
