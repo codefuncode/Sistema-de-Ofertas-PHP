@@ -5,9 +5,10 @@ function compruebaloguin(argument) {
     let registrese = document.querySelector(".registrese");
     let inicioseccion = document.querySelector(".inicioseccion");
     let btn_registro = document.querySelectorAll(".registrese button");
+    let logeo = false;
 
     let inicio = document.getElementById('inicio');
-
+    inicioseccion.style.display = "none";
     cuerpo.style.display = "none";
     targetaCompra.style.display = "none";
     formulario.style.display = "none";
@@ -42,26 +43,28 @@ function compruebaloguin(argument) {
                     var myObj = JSON.parse(msg);
                     // var myObj = JSON.stringify(msg);
 
-                    if (myObj[0]) {
+                    if (myObj.respuesta == "existe") {
 
-                        if (myObj[0].respuesta == "existe") {
+                        // cuerpo.style.display = "";
+                        // targetaCompra.style.display = "none";
+                        // formulario.style.display = "none";
+                        // registrese.style.display = "none";
+                        // logeo = true;
+                        console.log(myObj);
+                        console.log(myObj.nombreCliente);
 
-                            cuerpo.style.display = "";
-                            targetaCompra.style.display = "none";
-                            formulario.style.display = "none";
-                            registrese.style.display = "none";
+                    } else if (myObj.respuesta == "ok") {
 
-                            console.log(myObj);
-                            // console.log(myObj.nombreCliente);
-
-                        } else if (myObj.respuesta == "ok") {
-
-                        }
-
-                    } else {
-
+                        logeo = true;
+                        cuerpo.style.display = "";
+                        targetaCompra.style.display = "none";
+                        formulario.style.display = "none";
+                        registrese.style.display = "none";
+                        logeo = true;
                         console.log(myObj);
                     }
+
+                    console.log(myObj);
 
                     console.log('=================');
                     console.log('Mensajes sin filtro para pruebas')
@@ -72,12 +75,23 @@ function compruebaloguin(argument) {
         }
 
     });
-    inicio.addEventListener("click", function(argument) {
 
-        console.log(this);
-        cuerpo.style.display = "";
+    btn_registro[1].addEventListener("click", function(argument) {
+        inicioseccion.style.display = "";
+        cuerpo.style.display = "none";
         targetaCompra.style.display = "none";
         formulario.style.display = "none";
         registrese.style.display = "none";
+    })
+    inicio.addEventListener("click", function(argument) {
+
+        if (logeo) {
+            console.log(this);
+            cuerpo.style.display = "";
+            targetaCompra.style.display = "none";
+            formulario.style.display = "none";
+            registrese.style.display = "none";
+        }
+
     });
 }

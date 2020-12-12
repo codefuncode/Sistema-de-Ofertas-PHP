@@ -67,4 +67,7 @@ if ($conn->affected_rows > 0) {
     $conn->close();
 }
 
+// SELECT * FROM Customers
+// WHERE Country='Germany' AND City='Berlin';
+
 ?>

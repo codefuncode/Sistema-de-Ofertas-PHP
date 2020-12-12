@@ -157,4 +157,10 @@ img {
 }
 .registrese>div {
     margin-left: 300px !important;
+    margin-top: 50px !important;
+}
+.inicioseccion>div {
+    margin-top: 50px;
+    margin-left: 300px !important;
+    margin-right: 25px;
 }
