@@ -25,9 +25,7 @@ if ($conn->affected_rows > 0) {
 
         array_push($res,
             array(
-                'respuesta'     => "existe",
-                'idcliente'     => $row['idcliente'],
-                'nombreCliente' => $row['nombreCliente'],
+                'respuesta' => "existe",
 
             )
         );

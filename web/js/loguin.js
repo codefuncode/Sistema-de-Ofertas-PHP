@@ -43,33 +43,33 @@ function compruebaloguin(argument) {
                     var myObj = JSON.parse(msg);
                     // var myObj = JSON.stringify(msg);
 
-                    if (myObj.respuesta == "existe") {
-
-                        // cuerpo.style.display = "";
-                        // targetaCompra.style.display = "none";
-                        // formulario.style.display = "none";
-                        // registrese.style.display = "none";
+                    if (myObj[0].respuesta == "existe") {
+                        inicioseccion.style.display = "";
+                        cuerpo.style.display = "none";
+                        targetaCompra.style.display = "none";
+                        formulario.style.display = "none";
+                        registrese.style.display = "none";
                         // logeo = true;
                         console.log(myObj);
-                        console.log(myObj.nombreCliente);
+                        // console.log(myObj.nombreCliente);
 
-                    } else if (myObj.respuesta == "ok") {
+                    } else if (myObj[0].respuesta == "ok") {
 
                         logeo = true;
                         cuerpo.style.display = "";
                         targetaCompra.style.display = "none";
                         formulario.style.display = "none";
                         registrese.style.display = "none";
-                        logeo = true;
+                        // logeo = true;
                         console.log(myObj);
                     }
 
-                    console.log(myObj);
+                    // console.log(myObj);
 
-                    console.log('=================');
-                    console.log('Mensajes sin filtro para pruebas')
-                    console.log(msg);
-                    console.log('=================');
+                    // console.log('=================');
+                    // console.log('Mensajes sin filtro para pruebas')
+                    // console.log(msg);
+                    // console.log('=================');
                 });
 
         }
@@ -82,7 +82,9 @@ function compruebaloguin(argument) {
         targetaCompra.style.display = "none";
         formulario.style.display = "none";
         registrese.style.display = "none";
-    })
+        let btn_inicio = document.querySelectorAll('.inicioseccion input');
+        console.log(btn_inicio);
+    });
     inicio.addEventListener("click", function(argument) {
 
         if (logeo) {
@@ -91,6 +93,7 @@ function compruebaloguin(argument) {
             targetaCompra.style.display = "none";
             formulario.style.display = "none";
             registrese.style.display = "none";
+
         }
 
     });
