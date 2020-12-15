@@ -60,7 +60,7 @@ function compruebaloguin(argument) {
 
                     // var myObj = JSON.stringify(msg);
 
-                    if (myObj[0].respuesta == "existe") {
+                    if (myObj.respuesta == "existe") {
                         inicioseccion.style.display = "";
                         cuerpo.style.display = "none";
                         targetaCompra.style.display = "none";
@@ -70,7 +70,7 @@ function compruebaloguin(argument) {
                         // logeo = true;
                         console.log(myObj);
 
-                    } else if (myObj[0].respuesta == "ok") {
+                    } else if (myObj.respuesta == "ok") {
 
                         logeo = true;
                         cuerpo.style.display = "none";
@@ -81,7 +81,7 @@ function compruebaloguin(argument) {
 
                         // logeo = true;
                         console.log(myObj);
-                    } else if (myObj[0].respuesta == "no") {
+                    } else if (myObj.respuesta == "no") {
 
                         console.log(myObj);
                     }
