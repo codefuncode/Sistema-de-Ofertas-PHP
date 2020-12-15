@@ -1,12 +1,11 @@
-var dataresivida,
-    posicion = 0,
-    id_oferta = "";
-
 function pruebaseleccion(argument) {
 
     // var selecciona = document.getElementById('selecciona');
 
     function iniciodata() {
+        var dataresivida,
+            posicion = 0,
+            id_oferta = "";
         targetaCompra = document.getElementById('targetaCompra');
 
         targetaCompra.style.display = "none";
@@ -79,12 +78,12 @@ function pruebaseleccion(argument) {
                         console.log(list[i]);
                     }
 
+                    imajenofertaactual.src = "php/" + data[posicion]['imagen'];
+                    captionText.innerHTML = data[posicion]['nombreOferta'];
+                    prev.addEventListener("click", cambiaOferta);
+                    next.addEventListener("click", cambiaOferta);
+                    comporarOfertaAhora();
                 }
-                imajenofertaactual.src = "php/" + data[posicion]['imagen'];
-                captionText.innerHTML = data[posicion]['nombreOferta'];
-                prev.addEventListener("click", cambiaOferta);
-                next.addEventListener("click", cambiaOferta);
-                comporarOfertaAhora();
 
                 function cambiaOferta(argument) {
 

@@ -73,7 +73,6 @@ CSS Snippets
 
 Emmet
 
-
 JavaScript Comploetions
 
 JQuery
@@ -114,3 +113,266 @@ zzz A File Icon zzz
 
 En el fichero selecionaofertas  de js  esta la aplicacion de las fotos y contenido que seleccione el usuiariuo  y se mostraran los datos de la oferta que el usuario seleccione 
 
+
+30 noviembre 
+
+
+
+
+codefuncode@HP:/opt/lampp/htdocs/Proyectos/Ricardo-Hernandez$  git log
+commit 2a426c4374a76621a06198a168c867f8638ba236 (HEAD -> main, origin/main, origin/HEAD)
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sat Dec 12 02:15:44 2020 -0400
+
+    Formulario de logeo en proseso, seleccion de cajas de texto  y compertaminto del boton inicio, podfemos cambar el nombre para retorno ya que se usa para ir atras en la compra de ofertas
+
+commit 333ec837e902dd5ed561a1d22922656fc29bcbaf
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sat Dec 12 01:36:19 2020 -0400
+
+    Formulario de inicio completamdo
+
+commit 8544fbb762b7c86dadd69047b934454d78d77764
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Fri Dec 11 03:14:48 2020 -0400
+
+    Comportaminto mejorado. Trabajio extrta nesesita una explicacion
+
+commit 75082568cd0e4aaa2d5e86e789382dad1ee5956f
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Fri Dec 11 02:38:49 2020 -0400
+:...skipping...
+commit 2a426c4374a76621a06198a168c867f8638ba236 (HEAD -> main, origin/main, origin/HEAD)
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sat Dec 12 02:15:44 2020 -0400
+
+    Formulario de logeo en proseso, seleccion de cajas de texto  y compertaminto del boton inicio, podfemos cambar el nombre para retorno ya que se usa para ir atras en la compra de ofertas
+
+commit 333ec837e902dd5ed561a1d22922656fc29bcbaf
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sat Dec 12 01:36:19 2020 -0400
+
+    Formulario de inicio completamdo
+
+commit 8544fbb762b7c86dadd69047b934454d78d77764
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Fri Dec 11 03:14:48 2020 -0400
+
+    Comportaminto mejorado. Trabajio extrta nesesita una explicacion
+
+commit 75082568cd0e4aaa2d5e86e789382dad1ee5956f
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Fri Dec 11 02:38:49 2020 -0400
+
+    Registro de usuario enviá y recibe respuestas de estado satisfactoriamente. Horas trabajadas  de 11:30 – 2:41
+
+commit 21b4ec73911b6573fb706356218d73765abed4c3
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sun Dec 6 17:52:41 2020 -0400
+
+    trabaqjo del 5 de diciembre. Moduificacion base de datos pruebas en el panel de reguistro de usuarios y otros detalles menores
+    3 horas trabajadas
+
+commit 47efc1817d15af129171ee8fc89e711322a5f320
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Fri Dec 4 20:25:01 2020 -0400
+
+    Formulario de inicio y planeacion de la base de datos 21:30 -2:00s
+
+commit 85e711dedb32404ab73543b49aceb60523b0933b
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Thu Dec 3 01:57:58 2020 -0400
+
+    INvesticgacion y planificacion del inicio de secion  2 horas
+
+commit fa6837c53b5c1591caf2628b39574f988bb02e8c
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Mon Nov 30 02:06:19 2020 -0400
+
+    Trabajo completado insercion de datros del folmulario coliente satisfactorio 3 horas trabajadas
+
+commit 4cb2a557eb3d1b5c92506d8d15f8eeec751dc39e (origin/rama-prueba)
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sun Nov 29 20:40:34 2020 -0400
+
+    Funcion enviar datos al folmulario  completado
+
+commit d2b5ef63212809acfffd97e169bd319492adb705
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sun Nov 29 20:23:04 2020 -0400
+
+    Javascrtipt formulario comprador
+
+commit c2797b7731c6fb2ed4be86fdbf8944356fc81510
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sun Nov 29 00:20:57 2020 -0400
+
+    notas changes
+
+commit 1062e22b4a620963fed7e8b5c3806a1344e0f465
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sat Nov 28 02:19:48 2020 -0400
+
+    Update
+
+commit f1aec66effc53d87d92afab44252eadfc6bb9869
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sat Nov 28 01:33:14 2020 -0400
+
+    Trabajo realizado  formulario y tabla de datos
+
+commit 5a319dc340665b9fb4c91166a374a9da5822bcad
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Tue Nov 24 18:27:20 2020 -0400
+
+    Ficheros multimedia actualizados
+
+commit 31b441b1065fad98e7b1d3ad7da4076beb224969
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sat Nov 21 00:40:48 2020 -0400
+
+    coreccion respuesta del servidor al validar los datos
+
+commit ee984e236dad9152dfdaabc704a4679dea868e3a
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sat Nov 21 00:31:37 2020 -0400
+
+    Eliminados los ficheros multimedia
+
+commit f70643c0c7996a9ca93b63cfa4adb72d1828996f
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sat Nov 21 00:21:35 2020 -0400
+
+    Elimninar accion al servidor form del menu princilap , se prefiere ajax para todo
+
+commit f086d5ff47e6bf7b1870db14dc77ba35823e2667
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sat Nov 21 00:09:02 2020 -0400
+
+    Actrulisado , targeta de complras  con las datos corespondientes
+
+commit 70b4842db2a4a04ff51521911ef1be7088734a6c
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sun Nov 29 20:40:34 2020 -0400
+
+    Funcion enviar datos al folmulario  completado
+
+commit d2b5ef63212809acfffd97e169bd319492adb705
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sun Nov 29 20:23:04 2020 -0400
+
+    Javascrtipt formulario comprador
+
+commit c2797b7731c6fb2ed4be86fdbf8944356fc81510
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sun Nov 29 00:20:57 2020 -0400
+
+    notas changes
+
+commit 1062e22b4a620963fed7e8b5c3806a1344e0f465
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sat Nov 28 02:19:48 2020 -0400
+
+    Update
+
+commit f1aec66effc53d87d92afab44252eadfc6bb9869
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sat Nov 28 01:33:14 2020 -0400
+
+    Trabajo realizado  formulario y tabla de datos
+
+commit 5a319dc340665b9fb4c91166a374a9da5822bcad
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Tue Nov 24 18:27:20 2020 -0400
+
+    Ficheros multimedia actualizados
+
+commit 31b441b1065fad98e7b1d3ad7da4076beb224969
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sat Nov 21 00:40:48 2020 -0400
+
+    coreccion respuesta del servidor al validar los datos
+
+commit ee984e236dad9152dfdaabc704a4679dea868e3a
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sat Nov 21 00:31:37 2020 -0400
+
+    Eliminados los ficheros multimedia
+
+commit f70643c0c7996a9ca93b63cfa4adb72d1828996f
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sat Nov 21 00:31:37 2020 -0400
+
+    Eliminados los ficheros multimedia
+
+commit f70643c0c7996a9ca93b63cfa4adb72d1828996f
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sat Nov 21 00:21:35 2020 -0400
+
+    Elimninar accion al servidor form del menu princilap , se prefiere ajax para todo
+
+commit f086d5ff47e6bf7b1870db14dc77ba35823e2667
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sat Nov 21 00:09:02 2020 -0400
+
+    Actrulisado , targeta de complras  con las datos corespondientes
+
+commit 70b4842db2a4a04ff51521911ef1be7088734a6c
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Fri Nov 20 01:54:20 2020 -0400
+
+    display none del cuerpo de la paguina hecho dentro de una funcion
+
+commit 390708c752a4f8c15f3b891f8224fcdfe79f2819
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Wed Nov 18 01:35:34 2020 -0400
+
+    Trabajo insercion y pruebas completadas
+
+commit 9bfacaf4b1add540ac8a0152f9ef6df93a3c06b0
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Tue Nov 17 00:56:14 2020 -0400
+
+    Actualizacion
+
+commit a237671d9d3d102ab82b95ddd70805323fa5cbae
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Mon Nov 16 21:19:38 2020 -0400
+
+    Cambios en la navegacion por las ofertas
+
+commit 651a965f68b4b505b99eb4eae78f8d07f1bd2fc7
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Fri Nov 13 23:47:14 2020 -0400
+
+    Video funcionando y la imagen tambien
+
+commit 5a7c2bbbe078db700bf1bcfa40182ae6cfda2aac
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Fri Nov 13 21:32:59 2020 -0400
+
+    Pruebe de ejecucion
+
+commit d3b7e209573208d80547e514da071f5701cf9df9
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Thu Nov 12 02:25:39 2020 -0400
+
+    12 de noviembre
+
+commit 3ce0e43cdf94213a2f2bc95ffe9a5cf03b7ad8fd
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Sat Nov 7 02:17:06 2020 -0400
+
+    7 noviembre
+
+commit bb12411aff174d1f7475e1cc91e899a1e9850df9
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Fri Nov 6 23:44:37 2020 -0400
+
+    Ejercicios de prueba
+
+commit 30af67fa70c55fd886dba3086ec2a2ca8424d35c
+Author: codefuncode <codefuncode@protonmail.com>
+Date:   Thu Nov 5 00:49:54 2020 -0400
+
+    5 de noviembre
