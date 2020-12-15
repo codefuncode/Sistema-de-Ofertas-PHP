@@ -59,7 +59,6 @@ function compruebaloguin(argument) {
                     let myObj = JSON.parse(msg);
 
                     // var myObj = JSON.stringify(msg);
-
                     if (myObj.respuesta == "existe") {
                         inicioseccion.style.display = "";
                         cuerpo.style.display = "none";
