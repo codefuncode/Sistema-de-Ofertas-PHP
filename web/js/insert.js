@@ -28,10 +28,10 @@ function panelofertas(argument) {
                         // console.log(data);
                     }
                 }).done(function(data) {
+                    var res = JSON.parse(data);
+                    console.log(res);
 
-                    console.log(data);
-
-                    if (data == 1) {
+                    if (res.respuesta == "si") {
                         // ---------------------------
                         //  esto es de la libertaria swetalert
                         swal({
@@ -40,7 +40,7 @@ function panelofertas(argument) {
                             icon: "success",
                         });
                         // ---------------------------
-                    } else {
+                    } else if (res.respuesta == "no") {
 
                         swal({
                             title: "Error",

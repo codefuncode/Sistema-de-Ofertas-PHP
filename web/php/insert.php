@@ -87,9 +87,10 @@ VALUES ('$nombreOferta ', '$descripcionOferta ','$precio' ,'$fechavigencia','$pa
 
 // ---------------------------------
     //  Ejecutamos la consulta y si el resultado devuelve true entonces nos envía
-    if (($conn->query($sql) === true) &&
-        (file_exists($path_filename_ext) === false) &&
-        (file_exists($path_filename_ext_video) === false)) {
+    // ($conn->query($sql) === true) &&
+    // (file_exists($path_filename_ext) === false) &&
+    //  (file_exists($path_filename_ext_video) === false)
+    if ($conn->query($sql)) {
 
         move_uploaded_file(
             $temp_name,
@@ -99,19 +100,25 @@ VALUES ('$nombreOferta ', '$descripcionOferta ','$precio' ,'$fechavigencia','$pa
             $temp_name_video,
             $path_filename_ext_video);
 
-        echo true;
+        $res = array('respuesta' => "si");
+
+        echo json_encode($res);
 
     } else {
 
-        echo false;
+        $res = array('respuesta' => "no");
+
+        echo json_encode($res);
     }
 // ---------------------------------
 
     $conn->close();
 
-}else{
-    
-   echo false;  
+} else {
+
+    $res = array('respuesta' => "no");
+
+    echo json_encode($res);
 }
 
 // ===========================================================

@@ -202,7 +202,7 @@ function w3_close() {
     </script>
     <script src="../js/jquery.min.js" type="text/javascript">
     </script>
-    <script src="../js/js.js" type="text/javascript">
+    <script src="../js/insert.js" type="text/javascript">
     </script>
     <script type="text/javascript">
       $(document).ready(function() {
