@@ -146,7 +146,7 @@ function compruebaloguin(argument) {
                     logeo = true;
                     cuerpo.style.display = "";
                     inicioseccion.style.display = "none";
-                    targetaCompra.style.display = "";
+                    targetaCompra.style.display = "none";
                     formulario.style.display = "none";
                     registrese.style.display = "none";
 
