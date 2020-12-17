@@ -72,8 +72,8 @@ function compruebaloguin(argument) {
                     } else if (myObj.respuesta == "ok") {
 
                         logeo = true;
-                        cuerpo.style.display = "none";
-                        inicioseccion.style.display = "";
+                        cuerpo.style.display = "";
+                        inicioseccion.style.display = "none";
                         targetaCompra.style.display = "none";
                         formulario.style.display = "none";
                         registrese.style.display = "none";
