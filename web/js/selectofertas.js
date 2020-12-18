@@ -148,7 +148,15 @@ function pruebaseleccion(argument) {
                 cuerpo.style.display = "none";
                 targetaCompra.style.display = "";
                 document.querySelector(".formulario").style.display = "";
+                // =================================================
+                console.log('==============');
+                console.log('idoferta');
                 console.log(dataresivida[posicion]['idoferta']);
+
+                console.log('==============');
+                console.log('id usuario');
+                console.log(idusuario);
+                // =================================================
                 TargetaImagen.src = "php/" + dataresivida[posicion]['imagen'];
                 TargetaTitulo.innerHTML = dataresivida[posicion]['nombreOferta'];
                 TargetaPrecio.innerHTML = "$ " + dataresivida[posicion]['precio'];

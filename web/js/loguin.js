@@ -1,3 +1,5 @@
+var idusuario;
+
 function compruebaloguin(argument) {
 
     // ===================================================================
@@ -38,7 +40,10 @@ function compruebaloguin(argument) {
 
     btn_registro[0].addEventListener("click", function(argument) {
 
-        if (inputs[0].value == "" || inputs[1].value == "" || inputs[2].value == "" || inputs[3].value == "") {
+        if (inputs[0].value == "" ||
+            inputs[1].value == "" ||
+            inputs[2].value == "" ||
+            inputs[3].value == "") {
 
             console.log('Algo esta vació');
 
@@ -57,6 +62,8 @@ function compruebaloguin(argument) {
                 })
                 .done(function(msg) {
                     let myObj = JSON.parse(msg);
+                    console.log(msg);
+                    console.log(myObj.respuesta);
 
                     // var myObj = JSON.stringify(msg);
                     if (myObj.respuesta == "existe") {
@@ -151,6 +158,7 @@ function compruebaloguin(argument) {
                     registrese.style.display = "none";
 
                     console.log(myObj[0].idcliente);
+                    idusuario = myObj[0].idcliente;
 
                 } else if (myObj[0].respuesta == "no") {
 

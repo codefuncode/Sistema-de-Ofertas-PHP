@@ -18,20 +18,9 @@ $sql2  = "SELECT *  FROM cliente WHERE emailCliente='$email'";
 
 $result = $conn->query($sql2);
 
-if ($conn->affected_rows > 0) {
+if ($conn->affected_rows) {
 
-    $res = [];
-    while ($row = $result->fetch_assoc()) {
-
-        array_push($res,
-            array(
-                'respuesta' => "existe",
-
-            )
-        );
-
-    }
-
+    $res = array('respuesta' => "existe");
     echo json_encode($res);
 
 } else {
