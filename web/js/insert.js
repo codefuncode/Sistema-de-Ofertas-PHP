@@ -30,6 +30,7 @@ function panelofertas(argument) {
                 }).done(function(data) {
                     var res = JSON.parse(data);
                     console.log(res);
+                    console.log(data);
 
                     if (res.respuesta == "si") {
                         // ---------------------------
