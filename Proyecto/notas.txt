@@ -1,0 +1,21 @@
+Documentación 
+
+
+El programa consta de  y directorios y le fichero  index.html dentro del directorio padre de todos los directorios del proyecto. 
+
+Ficheros 
+	1. CSS
+		Contiene ficheros con las librerías Boostrap y W3SS y un fichero  CSS adicional para aplicar unos cambios personalizados dentro de  la estructura d que compone la interfaz de usuario.  
+
+	2. JS
+		Contiene ficheros de la librería Boostrap, JQuery y Sweet Alert. También posee los ficheros confeccionados para que todo el funcionamiento esperado sea realizado con éxito. 
+		Estos ficheros son :
+			1. inser.js
+			2. loguin.js
+			3. seleccionaoferta.js
+
+
+	3. PHP
+
+
+	4. MySql

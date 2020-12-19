@@ -1,4 +1,4 @@
-function pruebaseleccion(argument) {
+function SelecionaOfertas(argument) {
 
     // var selecciona = document.getElementById('selecciona');
 

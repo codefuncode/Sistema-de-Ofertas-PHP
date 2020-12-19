@@ -29,13 +29,11 @@ function compruebaloguin(argument) {
     inicioseccion.style.display = "none";
     cuerpo.style.display = "none";
     targetaCompra.style.display = "none";
-    // formulario.style.display = "none";
     registrese.style.display = "";
 
-    console.log(inputs.length);
     for (var i = 0; i < inputs.length; i++) {
         inputs[i].value = "";
-        console.log(inputs[i]);
+
     }
 
     btn_registro[0].addEventListener("click", function(argument) {
@@ -44,8 +42,6 @@ function compruebaloguin(argument) {
             inputs[1].value == "" ||
             inputs[2].value == "" ||
             inputs[3].value == "") {
-
-            console.log('Algo esta vació');
 
         } else {
 
@@ -65,66 +61,47 @@ function compruebaloguin(argument) {
                     console.log(msg);
                     console.log(myObj.respuesta);
 
-                    // var myObj = JSON.stringify(msg);
                     if (myObj.respuesta == "existe") {
-                        console.log(myObj.idcliente);
+
                         inicioseccion.style.display = "";
                         cuerpo.style.display = "none";
                         targetaCompra.style.display = "none";
-                        // formulario.style.display = "none";
                         registrese.style.display = "none";
 
-                        // logeo = true;
-                        console.log(myObj);
-
                     } else if (myObj.respuesta == "ok") {
-                        console.log(myObj.idcliente);
+
                         logeo = true;
                         cuerpo.style.display = "";
                         inicioseccion.style.display = "none";
                         targetaCompra.style.display = "none";
-                        // formulario.style.display = "none";
                         registrese.style.display = "none";
 
-                        // logeo = true;
-                        console.log(myObj);
                     } else if (myObj.respuesta == "no") {
 
-                        console.log(myObj);
                     }
 
-                    // console.log(myObj);
-
-                    // console.log('=================');
-
-                    // console.log('Mensajes sin filtro para pruebas')
-
-                    // console.log(msg);
-
-                    // console.log('=================');
                 });
 
         }
 
     });
 
-    btn_registro[1].addEventListener("click", function(argument) {
-        inicioseccion.style.display = "";
-        cuerpo.style.display = "none";
-        targetaCompra.style.display = "none";
-        // formulario.style.display = "none";
-        registrese.style.display = "none";
-        let btn_inicio = document.querySelectorAll('.inicioseccion input');
-        console.log(btn_inicio);
-    });
+    btn_registro[1].addEventListener("click",
+        function(argument) {
+
+            inicioseccion.style.display = "";
+            cuerpo.style.display = "none";
+            targetaCompra.style.display = "none";
+            registrese.style.display = "none";
+
+        });
 
     inicio.addEventListener("click", function(argument) {
 
         if (logeo) {
-            console.log(this);
+
             cuerpo.style.display = "";
             targetaCompra.style.display = "none";
-            // formulario.style.display = "none";
             registrese.style.display = "none";
 
         }
@@ -147,7 +124,7 @@ function compruebaloguin(argument) {
             .done(function(msg) {
 
                 let myObj = JSON.parse(msg);
-                // var myObj = JSON.stringify(msg);
+
                 console.log(myObj[0].respuesta);
                 if (myObj[0].respuesta == "si") {
 
@@ -155,15 +132,12 @@ function compruebaloguin(argument) {
                     cuerpo.style.display = "";
                     inicioseccion.style.display = "none";
                     targetaCompra.style.display = "none";
-                    // formulario.style.display = "none";
                     registrese.style.display = "none";
 
-                    console.log(myObj[0].idcliente);
                     idusuario = myObj[0].idcliente;
 
                 } else if (myObj[0].respuesta == "no") {
 
-                    console.log("no");
                 }
 
             });

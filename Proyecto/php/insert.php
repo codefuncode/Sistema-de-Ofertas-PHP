@@ -57,7 +57,7 @@ if ($_POST['nombreOferta'] &&
     $temp_name         = $_FILES['imagen']['tmp_name']; // Nombre temporal del fichero
     $path_filename_ext = $target_dir . $filename . "." . $ext; // Ruta completa del fichero
 
-    $target_dir_video        = "upload/"; // variable con el nombre del directorio para guardar imagen
+    $target_dir_video        = "upload/"; // variable con el nombre del directorio para guardar video
     $file_video              = $_FILES['video']['name']; // Nombre de la imagen
     $path_video              = pathinfo($file_video); // Extrae la ruta completa del fichero revivido
     $filename_video          = $path_video['filename']; // Extraemos solo en nombre de fichero

@@ -1,4 +1,7 @@
-function index(argument) {
+function CambioUrlImagenes(argument) {
+
+    //  Cambia los atributos src de las imágenes de todas las imágenes 
+    //  dentro de la web para evitar errores  con las fotos de la plantilla en linea 
 
     var img = document.getElementsByTagName('img');
     for (var i = 0; i < img.length; i++) {
@@ -11,36 +14,30 @@ function panelofertas(argument) {
 
     var btn = document.getElementById('enviar');
 
-    btn.onclick =
-        function(event) {
-            event.stopPropagation();
+    btn.onclick = function(event) {
 
-            // =================================================
-            $.ajax({
-                    url: "insert.php",
-                    type: "POST",
-                    data: capturavalores(),
-                    contentType: false,
-                    cache: false,
-                    processData: false,
-                    success: function(data) {
+        // event.stopPropagation();
 
-                        // console.log(data);
-                    }
-                }).done(function(data) {
+        // =================================================
+        $.ajax({
+                url: "insert.php",
+                type: "POST",
+                data: capturavalores(),
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function(data) {
+
                     var res = JSON.parse(data);
-                    console.log(res);
-                    console.log(data);
 
                     if (res.respuesta == "si") {
-                        // ---------------------------
-                        //  esto es de la libertaria swetalert
+
                         swal({
                             title: "Perfecto!!",
                             text: "Registro Insertado",
                             icon: "success",
                         });
-                        // ---------------------------
+
                     } else if (res.respuesta == "no") {
 
                         swal({
@@ -49,21 +46,26 @@ function panelofertas(argument) {
                             icon: "error",
                         });
                     }
+                }
 
-                })
-                .fail(function(data) {
-                    console.log('fail');
-                    console.log(data);
-                });
-            // =================================================
+            }).done(function(data) {
 
-        };
+            })
+            .fail(function(data) {
+
+            });
+        // =================================================
+
+    };
 
 }
 
 function capturavalores(argument) {
 
-    let nombreOferta =
+    //  Variables para capturar los valores del formulario de inserción de oferta
+
+    let
+        nombreOferta =
         document.getElementById('nombreOferta'),
         descripcionOferta =
         document.getElementById('descripcionOferta'),
@@ -77,12 +79,10 @@ function capturavalores(argument) {
         document.getElementById('imagen');
 
     // =============================================================
-    // let formData = new FormData();
-    // formData.append('imagen', imagen.files[0]);
-    // =============================================================
 
-    //  falta colocar comentarios sobre laimplementacion de  el uso de formdata para enviar datos al servidor 
+    //  Falta colocar comentarios sobre  implementar de  el uso de [FormData();] para enviar datos al servidor 
     let formData = new FormData();
+
     formData.append('nombreOferta', nombreOferta.value);
     formData.append('descripcionOferta', descripcionOferta.value);
     formData.append('precio', precio.value);
@@ -93,13 +93,10 @@ function capturavalores(argument) {
     let datadevuelta = formData;
 
     nombreOferta.value = "";
-
     descripcionOferta.value = "";
-
     precio.value = 0;
-
     fechavigencia.value = "";
-    // console.log(JSON.stringify(datadevuelta));
+
     return datadevuelta;
 
 }
