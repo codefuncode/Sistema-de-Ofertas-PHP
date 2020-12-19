@@ -3,6 +3,7 @@ function pruebaseleccion(argument) {
     // var selecciona = document.getElementById('selecciona');
 
     function iniciodata() {
+
         var dataresivida,
             posicion = 0,
             id_oferta = "";
@@ -147,7 +148,7 @@ function pruebaseleccion(argument) {
             comprarAhora.addEventListener("click", function(argument) {
                 cuerpo.style.display = "none";
                 targetaCompra.style.display = "";
-                document.querySelector(".formulario").style.display = "";
+                // document.querySelector(".formulario").style.display = "";
                 // =================================================
                 console.log('==============');
                 console.log('idoferta');
@@ -161,8 +162,37 @@ function pruebaseleccion(argument) {
                 TargetaTitulo.innerHTML = dataresivida[posicion]['nombreOferta'];
                 TargetaPrecio.innerHTML = "$ " + dataresivida[posicion]['precio'];
                 TargetaDescripcion.innerHTML = dataresivida[posicion]['descripcionOferta'];
-                document.getElementById('ide_de_turno').innerHTML = id_oferta;
+                // document.getElementById('ide_de_turno').innerHTML = id_oferta;
 
+            });
+            var comprar = document.getElementById('comprar');
+
+            comprar.addEventListener("click", function() {
+                // var mensaje = " el id de comprador es " + idusuario + " el id de oferta es " + dataresivida[posicion]['idoferta'];
+                // console.log(mensaje);
+
+                let datos = {
+                    idUsuario: idusuario,
+                    idOferta: dataresivida[posicion]['idoferta']
+                }
+
+                $.ajax({
+                        method: 'POST',
+                        url: 'php/compraoferta.php',
+                        data: datos,
+                        dataType: 'json'
+                    })
+                    .done(function(data) {
+                        console.log(data);
+
+                    }).always(function(data) {
+                        console.log(data);
+
+                    })
+                    .fail(function(data) {
+                        console.log(data);
+
+                    });
             });
             // ===========================================================
         }

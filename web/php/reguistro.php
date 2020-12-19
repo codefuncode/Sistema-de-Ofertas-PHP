@@ -15,12 +15,20 @@ if ($conn->connect_error) {
 }
 $email = $_POST['emailCliente'];
 $sql2  = "SELECT *  FROM cliente WHERE emailCliente='$email'";
+$sql3  = "SELECT *  FROM cliente WHERE emailCliente='$email' LIMIT 1";
 
 $result = $conn->query($sql2);
 
 if ($conn->affected_rows) {
 
-    $res = array('respuesta' => "existe");
+    $result = $conn->query($sql3);
+
+    $row = $result->fetch_array(MYSQLI_ASSOC);
+
+    $res = array(
+        'respuesta' => "existe",
+        'idcliente' => $row["idcliente"]);
+
     echo json_encode($res);
 
 } else {
@@ -36,14 +44,20 @@ if ($conn->affected_rows) {
     $pass            = $datos['pass'];
     $telefonoCliente = $datos['telefonoCliente'];
 
+// Nota:  Verificar el operador de comparación es PHP no javascriprt por eso verificar
+
     if ($stmt->execute() === true) {
 
-        $stmt->close();
+        $result = $conn->query($sql3);
 
-        $res = array('respuesta' => "ok");
+        $row = $result->fetch_array(MYSQLI_ASSOC);
+
+        $res = array(
+            'respuesta' => "ok",
+            'idcliente' => $row["idcliente"]);
 
         echo json_encode($res);
-
+        $stmt->close();
     } else {
 
         $res = array('respuesta' => "no");

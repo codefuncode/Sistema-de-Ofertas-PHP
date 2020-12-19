@@ -12,47 +12,47 @@ var input_usuario =
 //     console.log(input_usuario[i]);
 // }
 
-btn_input_usuario[0].addEventListener('click', function(argument) {
+// btn_input_usuario[0].addEventListener('click', function(argument) {
 
-    if (ValidateEmail(input_usuario[1].value)) {
+//     if (ValidateEmail(input_usuario[1].value)) {
 
-        if (input_usuario[0] == "" &&
-            input_usuario[1] == "" &&
-            input_usuario[3] == "") {
+//         if (input_usuario[0] == "" &&
+//             input_usuario[1] == "" &&
+//             input_usuario[3] == "") {
 
-            console.log("campos vacios");
+//             console.log("campos vacios");
 
-        } else {
+//         } else {
 
-            $.ajax({
-                    method: "POST",
-                    url: "php/compraoferta.php",
-                    data: {
-                        nombreCliente: input_usuario[0].value,
-                        emailCliente: input_usuario[1].value,
-                        telefonoCliente: input_usuario[2].value
-                        // idOferta: document.getElementById("ide_de_turno").textContent
+//             $.ajax({
+//                     method: "POST",
+//                     url: "php/compraoferta.php",
+//                     data: {
+//                         idUsuario: idusuario,
+//                         emailCliente: input_usuario[1].value,
+//                         telefonoCliente: input_usuario[2].value
+//                         // idOferta: document.getElementById("ide_de_turno").textContent
 
-                    }
-                })
-                .done(function(msg) {
-                    console.log(msg);
-                });
+//                     }
+//                 })
+//                 .done(function(msg) {
+//                     console.log(msg);
+//                 });
 
-            console.log('todo perfecto')
-        }
+//             console.log('todo perfecto')
+//         }
 
-    } else {
+//     } else {
 
-        console.log("email incorecto")
-    }
+//         console.log("email incorecto")
+//     }
 
-    function ValidateEmail(mail) {
-        if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail)) {
-            return (true)
-        }
-        // alert("You have entered an invalid email address!")
-        return (false)
-    }
+//     function ValidateEmail(mail) {
+//         if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail)) {
+//             return (true)
+//         }
+//         // alert("You have entered an invalid email address!")
+//         return (false)
+//     }
 
-});
+// });

@@ -376,3 +376,8 @@ Author: codefuncode <codefuncode@protonmail.com>
 Date:   Thu Nov 5 00:49:54 2020 -0400
 
     5 de noviembre
+
+
+
+Consulta con la fecha actula 
+INSERT INTO `Reservacion`( `idUsuario`, `idOferta`, `Fecha`) VALUES (20,10,now());
