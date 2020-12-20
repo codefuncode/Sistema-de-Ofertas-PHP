@@ -1,21 +1,41 @@
 Documentación 
 
 
-El programa consta de  y directorios y le fichero  index.html dentro del directorio padre de todos los directorios del proyecto. 
+El programa consta de  y directorios y el fichero  index.html dentro del directorio padre de todos los directorios del proyecto. 
 
-Ficheros 
+Directorios 
+
 	1. CSS
-		Contiene ficheros con las librerías Boostrap y W3SS y un fichero  CSS adicional para aplicar unos cambios personalizados dentro de  la estructura d que compone la interfaz de usuario.  
+		Contiene ficheros con las librerías Boostrap y W3SS y un fichero  CSS adicional para aplicar unos cambios personalizados dentro de la estructura que compone la interfaz de usuario.  
 
 	2. JS
 		Contiene ficheros de la librería Boostrap, JQuery y Sweet Alert. También posee los ficheros confeccionados para que todo el funcionamiento esperado sea realizado con éxito. 
+		
 		Estos ficheros son :
-			1. inser.js
+			1. insert.js	
+					Contiene las funciones necesarias para insertar los datos de las ofertas incluyendo imágenes y vídeos. 
+					
 			2. loguin.js
+					Contiene las funciones para registrarse e iniciar sesión  
+					
 			3. seleccionaoferta.js
 
 
 	3. PHP
+		Este directorio contiene una acarreta donde se almacenaran los vídeos  e imágenes  que el usuario subirá al servidor  este es el directorio "upload". Contiene a su vez los ficheros para la inserción de datos consultas y todo lo necesario para que la comunicación con la base de datos sea recibido por medio de peticiones Ajax. 
+		
+		Estos ficheros son :
 
+			1. compraoferta.php 
+			2. connect.php 
+			3. inicioseccion.php 
+			4. insert.php 
+			5. panelofertas.php 
+			6. reguistro.php 
+			7. seleccionaofertas.php 
 
 	4. MySql
+			Ficheros con las consultas de creación de base de dato lo cual  son necesarias para  que la interactivo del usuario realmente realice cambios persistentes en una base de datos. 
+
+			Codificación de caracteres usado en la base de datos es "utf8mb4_general_ci"
+			Leer aquí https://dev.mysql.com/doc/refman/8.0/en/charset-unicode-sets.html para información sobre los caracteres uniccode

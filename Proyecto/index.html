@@ -9,33 +9,38 @@
   <!-- --------------------------------------------------------------------- -->
   <!-- ---------------------------------------------------------------------------- -->
   <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet"/>
-  <link href="css/w3.css" rel="stylesheet" type="text/css"/>
+  <!-- <link href="css/w3.css" rel="stylesheet" type="text/css"/> -->
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="css/css.css" rel="stylesheet" type="text/css"/>
   <!-- ---------------------------------------------------------------------------- -->
   <!-- ------------------------------------------------------------------------------ -->
-  <script src="https://kit.fontawesome.com/a076d05399.js">
-  </script>
   <script src="js/loguin.js" type="text/javascript">
   </script>
-  <script src="js/test.js" type="text/javascript">
-  </script>
+  <!--   <script src="js/test.js" type="text/javascript">
+  </script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
   </script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
   </script>
+  <script src="https://kit.fontawesome.com/a076d05399.js">
+  </script>
+  <!--Get your own code at fontawesome.com-->
   <!-- ------------------------------------------------------------------------------ -->
   <!-- ------------------------------------------------------------------------------ -->
   <style>
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
-
-  .w3-content{max-width: 1200px;}
-  #videoserver { margin-top: 30px ; width: 100%;}
+    body,h1,h2,h3,h4,h5,h6 { font-family: "Raleway", Arial, Helvetica, sans-serif }
+      .w3-content{max-width: 1200px;}
+      #videoserver { margin-top: 30px ; width: 100%;}
+      .w3-content {
+      margin-left: initial;
+      margin-right: initial;
+      }
   </style>
   <!-- ------------------------------------------------------------------------------ -->
-  <body class="w3-content w3-border-left w3-border-right" style="width:100%; ">
+  <!--   <body class="w3-content w3-border-left w3-border-right" style="width:100%; ">   -->
+  <body class="w3-content" style="width:100%; ">
     <!--  Contenedor para alogar los elementos de los botones de inicio administración entre otros  -->
     <nav class="w3-sidebar w3-light-grey w3-collapse w3-top" id="mySidebar" style="z-index:3;width:260px">
       <div class="w3-container w3-display-container w3-padding-16">
@@ -165,7 +170,7 @@
         </div>
         <div class="w3-row w3-section">
           <div class="w3-col" style="width:50px">
-            <i class="w3-xxlarge fa fa-envelope-o">
+            <i class="fas fa-mail-bulk" style="font-size:36px">
             </i>
           </div>
           <div class="w3-rest">
@@ -230,12 +235,15 @@
     <script src="js/selectofertas.js" type="text/javascript">
     </script>
     <script type="text/javascript">
-      $(document).ready(function() {
-        CambioUrlImagenes();
-        SelecionaOfertas();
-        compruebaloguin();});
+      $(document).ready(function()
+      {
+        // CambioUrlImagenes();
+        iniciodata();
+        compruebaloguin();
+
+      });
     </script>
-    <script src="js/reservacion.js" type="text/javascript">
-    </script>
+    <!--  <script src="js/reservacion.js" type="text/javascript">
+    </script> -->
   </body>
 </html>

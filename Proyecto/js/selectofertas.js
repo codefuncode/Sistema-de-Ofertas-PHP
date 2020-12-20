@@ -1,203 +1,183 @@
-function SelecionaOfertas(argument) {
+//  ESta función se ejecuta de inmediato que la pagina esta completamente cargada 
+function iniciodata() {
+    //  variables  para recuperar los datos detectar la posición  en la oferta que esta navegando el usuario 
+    var
+        dataresivida,
+        posicion = 0,
+        id_oferta = "",
+        targetaCompra =
+        document.getElementById('targetaCompra');
 
-    // var selecciona = document.getElementById('selecciona');
+    targetaCompra.style.display = "none";
+    //  Enviamos una petición al servidor que nos traiga todas las ofertas en la base de datos 
+    $.ajax({
+            method: 'POST',
+            url: 'php/selecionaofertas.php',
+            data: {
+                json: JSON.stringify({
+                    "x": "x"
+                })
+            },
+            dataType: 'json'
 
-    function iniciodata() {
+        })
+        .done(function(data) {
+            // data = JSON.stringify(data);
+            console.log(data);
 
-        var dataresivida,
-            posicion = 0,
-            id_oferta = "";
-        targetaCompra = document.getElementById('targetaCompra');
+            var
+                nombreOfertaDisplay =
+                document.getElementById('nombreOfertaDisplay'),
 
-        targetaCompra.style.display = "none";
+                descripcionOferta =
+                document.getElementById('descripcionOferta'),
 
-        $.ajax({
-                method: 'POST',
-                url: 'php/selecionaofertas.php',
-                data: {
-                    json: JSON.stringify({
-                        "x": "x"
-                    })
-                },
-                dataType: 'json'
-            })
-            .done(function(data) {
-                // data = JSON.stringify(data);
-                console.log(data);
+                videoserver =
+                document.getElementById('videoserver'),
 
-                var nombreOfertaDisplay = document.getElementById('nombreOfertaDisplay');
-                descripcionOferta = document.getElementById('descripcionOferta');
+                precio =
+                document.getElementById('precio');
 
-                // var imagenserver = document.getElementById('imagenserver');
-                var videoserver = document.getElementById('videoserver');
-                precio = document.getElementById('precio');
+            nombreOfertaDisplay.innerHTML =
+                data[posicion]['nombreOferta'];
 
-                // video.style.display = "none";
+            precio.innerHTML =
+                "$ " + data[posicion]['precio'];
 
-                nombreOfertaDisplay.innerHTML = data[posicion]['nombreOferta'];
+            descripcionOferta.innerHTML =
+                data[posicion]['descripcionOferta'];
+
+            videoserver.src =
+                "php/" + data[posicion]['video'];
+
+            id_oferta =
+                data[posicion]['idoferta'];
+
+        })
+        .always(function(data) {
+
+            dataresivida = data;
+
+            if (data) {
+
+                var
+                    prev = document.getElementById('prev'),
+                    next = document.getElementById('next'),
+                    indiceimg = document.getElementById('indiceimg'),
+                    imajenofertaactual = document.getElementById('imajenofertaactual'),
+                    list = [],
+
+                    captionText = document.getElementById('CaptionText');
+
+                for (var i = 0; i < data.length; i++) {
+
+                    list[i] = document.createElement("spam");
+                    list[i].classList.add("dot");
+                }
+                for (var i = 0; i < list.length; i++) {
+
+                    indiceimg.appendChild(list[i]);
+                }
+
+                for (var i = 0; i < list.length; i++) {
+
+                    console.log(list[i]);
+                }
+
+                imajenofertaactual.src = "php/" + data[posicion]['imagen'];
+                captionText.innerHTML = data[posicion]['nombreOferta'];
+                prev.addEventListener("click", cambiaOferta);
+                next.addEventListener("click", cambiaOferta);
+                comporarOfertaAhora();
+            }
+
+            function cambiaOferta(argument) {
+
+                if (this == next) {
+
+                    posicion += 1;
+
+                    if (posicion > data.length - 1) {
+                        posicion = 0;
+                    }
+
+                } else if (this == prev) {
+                    posicion -= 1;
+
+                    if (posicion < 0) {
+                        posicion = data.length - 1;
+                    }
+
+                }
+
+                // console.log(posicion);
+
+                captionText.innerHTML = data[posicion]['nombreOferta'];
+                descripcionOferta.innerHTML = data[posicion]['descripcionOferta'];
                 precio.innerHTML = "$ " + data[posicion]['precio'];
-                // imagenserver.src = "php/" + data[data.length - 1]['imagen'];
-                console.log(data[data.length - 1]['video']);
+
+                imajenofertaactual.src = "php/" + data[posicion]['imagen'];
                 videoserver.src = "php/" + data[posicion]['video'];
 
-                descripcionOferta.innerHTML = data[posicion]['descripcionOferta'];
-
-                console.log(data.length - 1);
                 id_oferta = data[posicion]['idoferta'];
 
-                // var srt = data[data.length - 1]['video'];
+                console.log(data[posicion]['idoferta']);
+            }
 
-                // videoserver.src = srt.slice(3, 13);
+        })
+        .fail(function(data) {
 
-            }).always(function(data) {
+            console.log('fail');
+            // console.log(data);
+        });
 
-                dataresivida = data;
+    function comporarOfertaAhora(argument) {
 
-                if (data) {
+        cuerpo = document.getElementById('cuerpo');
+        comprarAhora = document.getElementById('comprarAhora');
 
-                    var
-                        prev = document.getElementById('prev'),
-                        next = document.getElementById('next'),
-                        indiceimg = document.getElementById('indiceimg'),
-                        imajenofertaactual = document.getElementById('imajenofertaactual'),
-                        list = [],
+        // ===========================================================
+        comprarAhora.addEventListener("click", function(argument) {
+            cuerpo.style.display = "none";
+            targetaCompra.style.display = "";
+            TargetaImagen.src = "php/" + dataresivida[posicion]['imagen'];
+            console.log(TargetaImagen);
+            TargetaTitulo.innerHTML = dataresivida[posicion]['nombreOferta'];
+            TargetaPrecio.innerHTML = "$ " + dataresivida[posicion]['precio'];
+            TargetaDescripcion.innerHTML = dataresivida[posicion]['descripcionOferta'];
 
-                        captionText = document.getElementById('CaptionText');
+        });
 
-                    for (var i = 0; i < data.length; i++) {
+        var comprar = document.getElementById('comprar');
 
-                        list[i] = document.createElement("spam");
-                        list[i].classList.add("dot");
-                    }
-                    for (var i = 0; i < list.length; i++) {
+        comprar.addEventListener("click", function() {
 
-                        indiceimg.appendChild(list[i]);
-                    }
+            let datos = {
+                idUsuario: idusuario,
+                idOferta: dataresivida[posicion]['idoferta']
+            }
 
-                    for (var i = 0; i < list.length; i++) {
+            $.ajax({
+                    method: 'POST',
+                    url: 'php/compraoferta.php',
+                    data: datos,
+                    dataType: 'json'
+                })
+                .done(function(data) {
 
-                        console.log(list[i]);
-                    }
+                }).always(function(data) {
 
-                    imajenofertaactual.src = "php/" + data[posicion]['imagen'];
-                    captionText.innerHTML = data[posicion]['nombreOferta'];
-                    prev.addEventListener("click", cambiaOferta);
-                    next.addEventListener("click", cambiaOferta);
-                    comporarOfertaAhora();
-                }
+                    console.log(data);
 
-                function cambiaOferta(argument) {
+                })
+                .fail(function(data) {
 
-                    console.log(this);
-                    console.log(data.length);
-                    console.log((posicion > data.lengt - 1));
+                    console.log(data);
 
-                    if (this == next) {
+                });
 
-                        posicion += 1;
+        });
+        // ===========================================================
+    }
 
-                        if (posicion > data.length - 1) {
-                            posicion = 0;
-                        }
-
-                        console.log('=====next=======');
-                        console.log(posicion);
-                        console.log('======next======');
-
-                    } else if (this == prev) {
-                        posicion -= 1;
-
-                        if (posicion < 0) {
-                            posicion = data.length - 1;
-                        }
-                        console.log('=======prev=====');
-                        console.log(posicion);
-                        console.log('=======prev=====');
-                    }
-
-                    console.log(posicion);
-
-                    imajenofertaactual.src = "php/" + data[posicion]['imagen'];
-                    captionText.innerHTML = data[posicion]['nombreOferta'];
-                    videoserver.src = "php/" + data[posicion]['video'];
-                    descripcionOferta.innerHTML = data[posicion]['descripcionOferta'];
-                    precio.innerHTML = "$ " + data[posicion]['precio'];
-                    id_oferta = data[posicion]['idoferta'];
-                    console.log(data[posicion]['idoferta']);
-                }
-
-            })
-            .fail(function(data) {
-
-                console.log('fail');
-                console.log(data);
-            });
-
-        var puruebimg = document.querySelectorAll('.mySlides img');
-
-        for (var i = 0; i < puruebimg.length; i++) {
-            console.log(puruebimg[i]);
-        }
-
-        function comporarOfertaAhora(argument) {
-
-            cuerpo = document.getElementById('cuerpo');
-            comprarAhora = document.getElementById('comprarAhora');
-
-            // ===========================================================
-            comprarAhora.addEventListener("click", function(argument) {
-                cuerpo.style.display = "none";
-                targetaCompra.style.display = "";
-                // document.querySelector(".formulario").style.display = "";
-                // =================================================
-                console.log('==============');
-                console.log('idoferta');
-                console.log(dataresivida[posicion]['idoferta']);
-
-                console.log('==============');
-                console.log('id usuario');
-                console.log(idusuario);
-                // =================================================
-                TargetaImagen.src = "php/" + dataresivida[posicion]['imagen'];
-                TargetaTitulo.innerHTML = dataresivida[posicion]['nombreOferta'];
-                TargetaPrecio.innerHTML = "$ " + dataresivida[posicion]['precio'];
-                TargetaDescripcion.innerHTML = dataresivida[posicion]['descripcionOferta'];
-                // document.getElementById('ide_de_turno').innerHTML = id_oferta;
-
-            });
-            var comprar = document.getElementById('comprar');
-
-            comprar.addEventListener("click", function() {
-                // var mensaje = " el id de comprador es " + idusuario + " el id de oferta es " + dataresivida[posicion]['idoferta'];
-                // console.log(mensaje);
-
-                let datos = {
-                    idUsuario: idusuario,
-                    idOferta: dataresivida[posicion]['idoferta']
-                }
-
-                $.ajax({
-                        method: 'POST',
-                        url: 'php/compraoferta.php',
-                        data: datos,
-                        dataType: 'json'
-                    })
-                    .done(function(data) {
-                        console.log(data);
-
-                    }).always(function(data) {
-                        console.log(data);
-
-                    })
-                    .fail(function(data) {
-                        console.log(data);
-
-                    });
-            });
-            // ===========================================================
-        }
-
-    };
-    iniciodata();
-
-}
+};
