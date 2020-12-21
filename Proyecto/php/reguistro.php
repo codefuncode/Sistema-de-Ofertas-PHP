@@ -7,15 +7,10 @@ $datos = array(
     "telefonoCliente" => $_POST['telefonoCliente'],
     "pass"            => $_POST['pass']);
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 $email = $_POST['emailCliente'];
-$sql2  = "SELECT *  FROM cliente WHERE emailCliente='$email'";
-$sql3  = "SELECT *  FROM cliente WHERE emailCliente='$email' LIMIT 1";
+
+$sql2 = "SELECT *  FROM cliente WHERE emailCliente='$email'";
+$sql3 = "SELECT *  FROM cliente WHERE emailCliente='$email' LIMIT 1";
 
 $result = $conn->query($sql2);
 
@@ -58,6 +53,7 @@ if ($conn->affected_rows) {
 
         echo json_encode($res);
         $stmt->close();
+
     } else {
 
         $res = array('respuesta' => "no");
@@ -67,8 +63,5 @@ if ($conn->affected_rows) {
 
     $conn->close();
 }
-
-// SELECT * FROM Customers
-// WHERE Country='Germany' AND City='Berlin';
 
 ?>

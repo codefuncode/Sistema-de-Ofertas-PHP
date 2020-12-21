@@ -11,172 +11,196 @@ function iniciodata() {
     targetaCompra.style.display = "none";
     //  Enviamos una petición al servidor que nos traiga todas las ofertas en la base de datos 
     $.ajax({
-            method: 'POST',
-            url: 'php/selecionaofertas.php',
-            data: {
-                json: JSON.stringify({
-                    "x": "x"
-                })
-            },
-            dataType: 'json'
+        method: 'POST',
+        url: 'php/selecionaofertas.php',
+        data: {
+            json: JSON.stringify({
+                "x": "x"
+            })
+        },
+        dataType: 'json'
 
-        })
-        .done(function(data) {
-            // data = JSON.stringify(data);
-            console.log(data);
+    }).done(function(data) { // El parámetro de esta función contiene los datos del servidor 
 
+        //  Variables para los elementos que reaccionaran de acuerdo a la respuesta del servidor 
+        var
+            nombreOfertaDisplay =
+            document.getElementById('nombreOfertaDisplay'),
+
+            descripcionOferta =
+            document.getElementById('descripcionOferta'),
+
+            videoserver =
+            document.getElementById('videoserver'),
+
+            precio =
+            document.getElementById('precio');
+
+        //  EScribir datos del servidor en el  HTML
+        nombreOfertaDisplay.innerHTML =
+            data[posicion]['nombreOferta'];
+
+        precio.innerHTML =
+            "$ " + data[posicion]['precio'];
+
+        descripcionOferta.innerHTML =
+            data[posicion]['descripcionOferta'];
+
+        videoserver.src =
+            "php/" + data[posicion]['video'];
+
+        id_oferta =
+            data[posicion]['idoferta'];
+
+    }).always(function(data) {
+        // El parámetro de esta función recibe  los  recibidos del servidor 
+        // cuando acabe todo el proceso de transferencia
+        // ----------------------------
+        //  Datos en una variable global  par usarla en cualquier lugar del programa 
+        dataresivida = data;
+        // ----------------------------
+        if (data) {
+            // Este condicional determina de que si llegan datos del servidor los procese  
+            // y genere unas esferas  que determinan el numero de datos resididos  desde el servidor 
+
+            // ------------------------------------------
+
+            //  Variables que seleccionan los botones y elementos necesarios 
+            //  para que su actividad  pueda navegar  por las ofertas  
             var
-                nombreOfertaDisplay =
-                document.getElementById('nombreOfertaDisplay'),
+                prev = document.getElementById('prev'),
+                next = document.getElementById('next'),
+                indiceimg = document.getElementById('indiceimg'),
+                imajenofertaactual = document.getElementById('imajenofertaactual'),
+                list = [],
+                captionText = document.getElementById('CaptionText');
 
-                descripcionOferta =
-                document.getElementById('descripcionOferta'),
+            //  Creamos los elementos
+            for (var i = 0; i < data.length; i++) {
 
-                videoserver =
-                document.getElementById('videoserver'),
-
-                precio =
-                document.getElementById('precio');
-
-            nombreOfertaDisplay.innerHTML =
-                data[posicion]['nombreOferta'];
-
-            precio.innerHTML =
-                "$ " + data[posicion]['precio'];
-
-            descripcionOferta.innerHTML =
-                data[posicion]['descripcionOferta'];
-
-            videoserver.src =
-                "php/" + data[posicion]['video'];
-
-            id_oferta =
-                data[posicion]['idoferta'];
-
-        })
-        .always(function(data) {
-
-            dataresivida = data;
-
-            if (data) {
-
-                var
-                    prev = document.getElementById('prev'),
-                    next = document.getElementById('next'),
-                    indiceimg = document.getElementById('indiceimg'),
-                    imajenofertaactual = document.getElementById('imajenofertaactual'),
-                    list = [],
-
-                    captionText = document.getElementById('CaptionText');
-
-                for (var i = 0; i < data.length; i++) {
-
-                    list[i] = document.createElement("spam");
-                    list[i].classList.add("dot");
-                }
-                for (var i = 0; i < list.length; i++) {
-
-                    indiceimg.appendChild(list[i]);
-                }
-
-                for (var i = 0; i < list.length; i++) {
-
-                    console.log(list[i]);
-                }
-
-                imajenofertaactual.src = "php/" + data[posicion]['imagen'];
-                captionText.innerHTML = data[posicion]['nombreOferta'];
-                prev.addEventListener("click", cambiaOferta);
-                next.addEventListener("click", cambiaOferta);
-                comporarOfertaAhora();
+                list[i] = document.createElement("spam");
+                list[i].classList.add("dot");
             }
+            // Agregamos todos los nodos generados 
+            for (var i = 0; i < list.length; i++) {
 
-            function cambiaOferta(argument) {
+                console.log(list[i]);
+                indiceimg.appendChild(list[i]);
+            }
+            //  Escribimos en el HTML los resultados 
+            imajenofertaactual.src = "php/" + data[posicion]['imagen'];
+            captionText.innerHTML = data[posicion]['nombreOferta'];
 
-                if (this == next) {
+            //  Eventos a los botones  responsables de la navegación por las ofertas 
+            prev.addEventListener("click", cambiaOferta);
+            next.addEventListener("click", cambiaOferta);
+            comporarOfertaAhora();
+        }
 
-                    posicion += 1;
+        //  ESta función es la responsable de cambiar el estado de la oferta en el html
+        function cambiaOferta(argument) {
 
-                    if (posicion > data.length - 1) {
-                        posicion = 0;
-                    }
+            //  MOdifiamos el valor de la posición de la oferta y lo guardamos en una variable 
+            if (this == next) {
 
-                } else if (this == prev) {
-                    posicion -= 1;
+                posicion += 1;
 
-                    if (posicion < 0) {
-                        posicion = data.length - 1;
-                    }
-
+                if (posicion > data.length - 1) {
+                    posicion = 0;
                 }
 
-                // console.log(posicion);
+            } else if (this == prev) {
+                posicion -= 1;
 
-                captionText.innerHTML = data[posicion]['nombreOferta'];
-                descripcionOferta.innerHTML = data[posicion]['descripcionOferta'];
-                precio.innerHTML = "$ " + data[posicion]['precio'];
+                if (posicion < 0) {
+                    posicion = data.length - 1;
+                }
 
-                imajenofertaactual.src = "php/" + data[posicion]['imagen'];
-                videoserver.src = "php/" + data[posicion]['video'];
-
-                id_oferta = data[posicion]['idoferta'];
-
-                console.log(data[posicion]['idoferta']);
             }
+            //  Usamos el valor de la variable posición para desplegar los datos correspondientes en el HTML
+            captionText.innerHTML = data[posicion]['nombreOferta'];
+            descripcionOferta.innerHTML = data[posicion]['descripcionOferta'];
+            precio.innerHTML = "$ " + data[posicion]['precio'];
 
-        })
-        .fail(function(data) {
+            imajenofertaactual.src = "php/" + data[posicion]['imagen'];
+            videoserver.src = "php/" + data[posicion]['video'];
 
-            console.log('fail');
-            // console.log(data);
-        });
+            id_oferta = data[posicion]['idoferta'];
+
+        }
+
+    }).fail(function(data) {
+        // 
+    });
 
     function comporarOfertaAhora(argument) {
 
-        cuerpo = document.getElementById('cuerpo');
-        comprarAhora = document.getElementById('comprarAhora');
-
-        // ===========================================================
-        comprarAhora.addEventListener("click", function(argument) {
-            cuerpo.style.display = "none";
-            targetaCompra.style.display = "";
-            TargetaImagen.src = "php/" + dataresivida[posicion]['imagen'];
-            console.log(TargetaImagen);
-            TargetaTitulo.innerHTML = dataresivida[posicion]['nombreOferta'];
-            TargetaPrecio.innerHTML = "$ " + dataresivida[posicion]['precio'];
-            TargetaDescripcion.innerHTML = dataresivida[posicion]['descripcionOferta'];
-
-        });
+        //  Función para enviar los datos necesarios para registrar una compra de ofertas 
+        //  Variables  seleccionan los elementos involucrados en la acción 
+        let cuerpo =
+            document.getElementById('cuerpo'),
+            comprarAhora =
+            document.getElementById('comprarAhora'),
+            targetaImagen =
+            document.getElementById('TargetaImagen'),
+            targetaTitulo =
+            document.getElementById('TargetaTitulo'),
+            targetaPrecio =
+            document.getElementById('TargetaPrecio'),
+            targetaDescripcion =
+            document.getElementById('TargetaDescripcion');
 
         var comprar = document.getElementById('comprar');
 
-        comprar.addEventListener("click", function() {
+        // ===========================================================
+        //  Evento escribe en la tarjeta de compra los datos de la oferta 
+        comprarAhora.addEventListener(
+            "click",
+            function() {
 
-            let datos = {
-                idUsuario: idusuario,
-                idOferta: dataresivida[posicion]['idoferta']
-            }
+                cuerpo.style.display = "none";
 
-            $.ajax({
+                targetaCompra.style.display = "";
+
+                targetaImagen.src =
+                    "php/" + dataresivida[posicion]['imagen'];
+
+                targetaTitulo.innerHTML =
+                    dataresivida[posicion]['nombreOferta'];
+
+                targetaPrecio.innerHTML =
+                    "$ " + dataresivida[posicion]['precio'];
+
+                targetaDescripcion.innerHTML =
+                    dataresivida[posicion]['descripcionOferta'];
+
+            });
+        //  Se encarga de insertar los datos de compra 
+        comprar.addEventListener(
+            "click",
+            function() {
+
+                let datos = {
+                    idUsuario: idusuario,
+                    idOferta: dataresivida[posicion]['idoferta']
+                }
+
+                $.ajax({
                     method: 'POST',
                     url: 'php/compraoferta.php',
                     data: datos,
                     dataType: 'json'
-                })
-                .done(function(data) {
-
+                }).done(function(data) {
+                    // 
                 }).always(function(data) {
-
-                    console.log(data);
-
-                })
-                .fail(function(data) {
-
-                    console.log(data);
-
+                    // 
+                }).fail(function(data) {
+                    // 
                 });
 
-        });
+            }
+            ``
+        );
         // ===========================================================
     }
 

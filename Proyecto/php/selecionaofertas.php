@@ -1,12 +1,6 @@
 <?php
 include_once 'connect.php';
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 $sql = "SELECT nombreOferta, descripcionOferta, precio,fechavigencia,imagen,video,idoferta FROM ofertas";
 
 $result = $conn->query($sql);
@@ -25,7 +19,6 @@ if ($result->num_rows > 0) {
                 'video'             => $row['video'],
                 'idoferta'          => $row['idoferta'],
 
-                // idoferta
             )
         );
 
@@ -34,8 +27,7 @@ if ($result->num_rows > 0) {
     echo json_encode($data);
 
 } else {
+
     echo "0 results";
 }
 $conn->close();
-// $json = json_decode($_POST['json']);
-// echo json_encode($json);
