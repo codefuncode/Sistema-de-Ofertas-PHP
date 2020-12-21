@@ -59,44 +59,44 @@ function iniciodata() {
         //  Datos en una variable global  par usarla en cualquier lugar del programa 
 
         // ----------------------------
-        if (!data == "undefined") {
-            dataresivida = data;
-            // Este condicional determina de que si llegan datos del servidor los procese  
-            // y genere unas esferas  que determinan el numero de datos resididos  desde el servidor 
 
-            // ------------------------------------------
+        dataresivida = data;
+        // Este condicional determina de que si llegan datos del servidor los procese  
+        // y genere unas esferas  que determinan el numero de datos resididos  desde el servidor 
 
-            //  Variables que seleccionan los botones y elementos necesarios 
-            //  para que su actividad  pueda navegar  por las ofertas  
-            var
-                prev = document.getElementById('prev'),
-                next = document.getElementById('next'),
-                indiceimg = document.getElementById('indiceimg'),
-                imajenofertaactual = document.getElementById('imajenofertaactual'),
-                list = [],
-                captionText = document.getElementById('CaptionText');
+        // ------------------------------------------
 
-            //  Creamos los elementos
-            for (var i = 0; i < data.length; i++) {
+        //  Variables que seleccionan los botones y elementos necesarios 
+        //  para que su actividad  pueda navegar  por las ofertas  
+        var
+            prev = document.getElementById('prev'),
+            next = document.getElementById('next'),
+            indiceimg = document.getElementById('indiceimg'),
+            imajenofertaactual = document.getElementById('imajenofertaactual'),
+            list = [],
+            captionText = document.getElementById('CaptionText');
 
-                list[i] = document.createElement("spam");
-                list[i].classList.add("dot");
-            }
-            // Agregamos todos los nodos generados 
-            for (var i = 0; i < list.length; i++) {
+        //  Creamos los elementos
+        for (var i = 0; i < data.length; i++) {
 
-                console.log(list[i]);
-                indiceimg.appendChild(list[i]);
-            }
-            //  Escribimos en el HTML los resultados 
-            imajenofertaactual.src = "php/" + data[posicion]['imagen'];
-            captionText.innerHTML = data[posicion]['nombreOferta'];
-
-            //  Eventos a los botones  responsables de la navegación por las ofertas 
-            prev.addEventListener("click", cambiaOferta);
-            next.addEventListener("click", cambiaOferta);
-            comporarOfertaAhora();
+            list[i] = document.createElement("spam");
+            list[i].classList.add("dot");
         }
+        // Agregamos todos los nodos generados 
+        for (var i = 0; i < list.length; i++) {
+
+            console.log(list[i]);
+            indiceimg.appendChild(list[i]);
+        }
+        //  Escribimos en el HTML los resultados 
+        imajenofertaactual.src = "php/" + data[posicion]['imagen'];
+        captionText.innerHTML = data[posicion]['nombreOferta'];
+        videoserver.src =
+            "php/" + data[posicion]['video'];
+        //  Eventos a los botones  responsables de la navegación por las ofertas 
+        prev.addEventListener("click", cambiaOferta);
+        next.addEventListener("click", cambiaOferta);
+        comporarOfertaAhora();
 
         //  ESta función es la responsable de cambiar el estado de la oferta en el html
         function cambiaOferta(argument) {
