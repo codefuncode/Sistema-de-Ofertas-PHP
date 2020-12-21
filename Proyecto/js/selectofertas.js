@@ -21,45 +21,46 @@ function iniciodata() {
         dataType: 'json'
 
     }).done(function(data) { // El parámetro de esta función contiene los datos del servidor 
+        if (!data == "undefined") {
+            //  Variables para los elementos que reaccionaran de acuerdo a la respuesta del servidor 
+            var
+                nombreOfertaDisplay =
+                document.getElementById('nombreOfertaDisplay'),
 
-        //  Variables para los elementos que reaccionaran de acuerdo a la respuesta del servidor 
-        var
-            nombreOfertaDisplay =
-            document.getElementById('nombreOfertaDisplay'),
+                descripcionOferta =
+                document.getElementById('descripcionOferta'),
 
-            descripcionOferta =
-            document.getElementById('descripcionOferta'),
+                videoserver =
+                document.getElementById('videoserver'),
 
-            videoserver =
-            document.getElementById('videoserver'),
+                precio =
+                document.getElementById('precio');
 
-            precio =
-            document.getElementById('precio');
+            //  EScribir datos del servidor en el  HTML
+            nombreOfertaDisplay.innerHTML =
+                data[posicion]['nombreOferta'];
 
-        //  EScribir datos del servidor en el  HTML
-        nombreOfertaDisplay.innerHTML =
-            data[posicion]['nombreOferta'];
+            precio.innerHTML =
+                "$ " + data[posicion]['precio'];
 
-        precio.innerHTML =
-            "$ " + data[posicion]['precio'];
+            descripcionOferta.innerHTML =
+                data[posicion]['descripcionOferta'];
 
-        descripcionOferta.innerHTML =
-            data[posicion]['descripcionOferta'];
+            videoserver.src =
+                "php/" + data[posicion]['video'];
 
-        videoserver.src =
-            "php/" + data[posicion]['video'];
-
-        id_oferta =
-            data[posicion]['idoferta'];
-
+            id_oferta =
+                data[posicion]['idoferta'];
+        }
     }).always(function(data) {
         // El parámetro de esta función recibe  los  recibidos del servidor 
         // cuando acabe todo el proceso de transferencia
         // ----------------------------
         //  Datos en una variable global  par usarla en cualquier lugar del programa 
-        dataresivida = data;
+
         // ----------------------------
-        if (data) {
+        if (!data == "undefined") {
+            dataresivida = data;
             // Este condicional determina de que si llegan datos del servidor los procese  
             // y genere unas esferas  que determinan el numero de datos resididos  desde el servidor 
 

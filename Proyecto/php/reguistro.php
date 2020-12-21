@@ -9,8 +9,8 @@ $datos = array(
 
 $email = $_POST['emailCliente'];
 
-$sql2 = "SELECT *  FROM cliente WHERE emailCliente='$email'";
-$sql3 = "SELECT *  FROM cliente WHERE emailCliente='$email' LIMIT 1";
+$sql2 = "SELECT * FROM cliente WHERE emailCliente='$email'";
+$sql3 = "SELECT * FROM cliente WHERE emailCliente='$email' LIMIT 1";
 
 $result = $conn->query($sql2);
 
@@ -28,8 +28,10 @@ if ($conn->affected_rows) {
 
 } else {
 
-    $sql = "INSERT INTO cliente (nombreCliente, emailCliente, pass, telefonoCliente)
+    $sql =
+        "INSERT INTO cliente (nombreCliente, emailCliente, pass, telefonoCliente)
     VALUES (?,?,?,?)";
+
     $stmt = $conn->prepare($sql);
 
     $stmt->bind_param("ssss", $nombreCliente, $emailCliente, $pass, $telefonoCliente);
