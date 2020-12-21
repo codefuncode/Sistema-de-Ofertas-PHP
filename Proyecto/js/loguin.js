@@ -77,22 +77,22 @@ function compruebaloguin(argument) {
                     url: "php/reguistro.php", // URL del fichero PHP donde se enviaran los datos 
                     data: datos // Datos que se enviaran 
                 })
-                .always(function(msg) {
+                .always(function(data) {
 
-                    let myObj = JSON.parse(msg); // Recuperamos los datos y los convertimos en objeto
+                    var data = JSON.parse(data); // Recuperamos los datos y los convertimos en objeto
 
-                    console.log(msg);
+                    // console.log(msg);
 
-                    console.log(myObj.respuesta);
+                    console.log(data.respuesta);
 
-                    if (myObj.respuesta == "existe") { // si la respuesta es existe  ara lo de aquí
+                    if (data.respuesta == "existe") { // si la respuesta es existe  ara lo de aquí
 
                         inicioseccion.style.display = "";
                         cuerpo.style.display = "none";
                         targetaCompra.style.display = "none";
                         registrese.style.display = "none";
 
-                    } else if (myObj.respuesta == "ok") { // si es OK es que se registro 
+                    } else if (data.respuesta == "ok") { // si es OK es que se registro 
 
                         logeo = true;
                         cuerpo.style.display = "";
@@ -100,7 +100,7 @@ function compruebaloguin(argument) {
                         targetaCompra.style.display = "none";
                         registrese.style.display = "none";
 
-                    } else if (myObj.respuesta == "no") { // Algo estuvo mal si el  servidor envía  esto
+                    } else if (data.respuesta == "no") { // Algo estuvo mal si el  servidor envía  esto
 
                     }
 
