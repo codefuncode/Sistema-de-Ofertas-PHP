@@ -77,7 +77,7 @@ function compruebaloguin(argument) {
                     url: "php/reguistro.php", // URL del fichero PHP donde se enviaran los datos 
                     data: datos // Datos que se enviaran 
                 })
-                .done(function(msg) {
+                .always(function(msg) {
 
                     let myObj = JSON.parse(msg); // Recuperamos los datos y los convertimos en objeto
 
@@ -148,7 +148,7 @@ function compruebaloguin(argument) {
                 url: "php/inicioseccion.php",
                 data: datos
             })
-            .done(function(msg) {
+            .always(function(msg) {
                 // Recibimos data jonson y convertimos en objeto 
                 let myObj = JSON.parse(msg);
 
